@@ -1,0 +1,190 @@
+#splash
+{
+	width: 42px;
+	height: 42px;
+	border: 0;
+ 	box-shadow:none;
+ 	border-radius: 0px;
+}
+
+#smoke
+{
+	width: 42px;
+	height: 42px;
+	border: 0;
+ 	box-shadow:none;
+ 	border-radius: 0px;
+}
+
+#explode
+{
+	width: 42px;
+	height: 42px;
+	border: 0;
+ 	box-shadow:none;
+ 	border-radius: 0px;
+}
+
+.fill
+{
+	width: 42px;
+	height: 42px;
+	border: 0;
+ 	box-shadow:none;
+ 	border-radius: 0px;
+}
+
+table 
+{
+	border-collapse: collapse;
+	width: 420px;
+	height: 420px;
+	margin-left: 25px;
+}
+
+header
+{
+	text-align: center;
+}
+
+.grid
+{
+	border: solid 1px black;
+}
+
+.coord
+{
+	width: 42px;
+	height: 42px;
+	border: 0;
+ 	box-shadow:none;
+ 	border-radius: 0px;
+}
+
+.ycoord
+{
+	font-weight: bold;
+	padding-right: 5px;
+}
+
+body 
+{
+	font-size: 16px;
+	color: black;
+	background-image: url("/assets/island.jpg");
+	background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+input:hover
+{
+	background: url(bomb.gif);
+	background-size: 42px 42px;
+}
+
+nav {
+	text-align: center;
+}
+
+nav ul
+{
+	display: inline-block;
+	padding-left: 10px;
+	margin-right: 5px;
+}
+
+/*removes bullets and creates lines to separate each block*/
+nav ul li{
+	margin-left: 10px;
+	list-style-type: none;
+	width: 200px;
+	float: left;
+	height: 20px;
+	text-align: center;
+}
+
+.navigation
+{
+	display: inline-block;
+ 	padding: 10px 20px;
+ 	font-size: 15px;
+ 	font-weight: bold;
+ 	cursor: pointer;
+ 	text-align: center;
+ 	text-decoration: none;
+ 	outline: none;
+ 	background-color: #FFC000;
+ 	border-style: solid;
+    border-color: black;
+    border-width: .5px;
+ 	border-radius: 5px;
+ 	box-shadow: 0 5px #C55A11;
+ 	width: 200px;
+
+}
+
+/*adjusts text size and color inside each block*/
+nav ul li a{
+	text-decoration: none;
+	color: black;
+	line-height: 25px;
+	display: block;
+}
+
+/*changes the color and look for nav bar when user hovers over*/
+.navigation:hover {
+background-color: #e6ac00;
+}
+
+.navigation:active {
+background-color: #e6ac00;
+  box-shadow: 0 3px #C55A11;
+  transform: translateY(4px);
+}
+
+#splash:active {
+	background: url(splash2.gif);
+	background-size: 42px 42px;
+}
+
+#smoke:active {
+	background: url(smoke2.gif);
+	background-size: 42px 30px;
+	background-repeat: no-repeat;
+	background-position: 0px -1px;
+}
+
+#explode:active {
+	background: url(explode2.gif);
+	background-size: 42px 42px;
+}
+
+main {
+	background-color: #b3e6ff;
+	background: rgba(179, 230, 255, 0.7);
+	background-position: center;
+	width: 510px;
+	height: 490px;
+	padding-top: 10px;
+	margin-left:auto; 
+	margin-right:auto;
+}
+
+#turn
+{
+	float: left;
+}
+
+audio
+{
+	display: none;
+}
+
+.imgBorder
+{
+	border-style: solid;
+    border-color: black;
+    border-width: 2px;
+}
