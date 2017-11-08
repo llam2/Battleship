@@ -71,7 +71,7 @@ body
 {
 	font-size: 16px;
 	color: black;
-	background-image: url("/assets/island.jpg");
+	background-image: url("island.jpg");
 	background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -187,4 +187,27 @@ audio
 	border-style: solid;
     border-color: black;
     border-width: 2px;
+}
+
+#wholeGrid
+{
+	display: none;
+}
+
+#options
+{
+	display: none;
+}
+
+#scores
+{
+	display: none;
+}
+
+
+h1
+{
+	font-weight: bold;
+	font-size: 24;
+	text-align: center;
 }

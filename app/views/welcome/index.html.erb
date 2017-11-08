@@ -19,15 +19,15 @@
 
 		<nav>
 			<ul>
-			<li><button type="button" onmouseover="playclip();" onclick="playclip2();" class="navigation">1-Player</button></li>
-			<li><button type="button" onmouseover="playclip();" class="navigation">Options</button></li>
-			<li><button type="button" onmouseover="playclip();" class="navigation">Scores</button></li>
+			<li><button type="button" onmouseover="playclip();" onclick="onePlayer();" class="navigation" id="onePlayer">1-Player</button></li>
+			<li><button type="button" onmouseover="playclip();" onclick="options();" class="navigation">Options</button></li>
+			<li><button type="button" onmouseover="playclip();" onclick="scores();" class="navigation">Scores</button></li>
 			</ul>
 		</nav>
 		<br>
 
 	<main>
-
+	<div id="wholeGrid">
 		<table>
   			<tr>
   			<th> </th>
@@ -59,7 +59,7 @@
 
   		<tr>
     		<td class="ycoord">B</td>
-   			<td class="grid"><form><button type="button" onmouseover="playclip();"onclick="playclip2();" class="fill">B1</button></td>
+   			<td class="grid"><button type="button" onmouseover="playclip();" onclick="playclip2();" class="fill">B1</button></td>
     		<td class="grid"><form><input onmouseover="playclip();" type="submit" value="B2" class="coord"></form></td>
     		<td class="grid"><form><input onmouseover="playclip();" type="submit" value="B3" class="coord"></form></td>
     		<td class="grid"><form><input onmouseover="playclip();" type="submit" value="B4" class="coord"></form></td>
@@ -186,7 +186,15 @@
 
 
 	</table>
+	</div>
 
+	<div id="options">
+		<h1>Options</h1>
+	</div>
+
+	<div id="scores">
+		<h1>Leaderboard</h1>
+	</div>
 
 
 	<audio controls autoplay loop>
@@ -214,4 +222,3 @@
 	</body>
 
 </html>
-
