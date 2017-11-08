@@ -113,7 +113,7 @@ nav ul li{
 
 .navigation
 {
-	display: inline-block;
+	display: none;
  	padding: 10px 20px;
  	font-size: 15px;
  	font-weight: bold;
@@ -131,6 +131,25 @@ nav ul li{
 
 }
 
+#startButton
+{
+	display: inline-block;
+ 	padding: 10px 20px;
+ 	font-size: 15px;
+ 	font-weight: bold;
+ 	cursor: pointer;
+ 	text-align: center;
+ 	text-decoration: none;
+ 	outline: none;
+ 	background-color: #FFC000;
+ 	border-style: solid;
+    border-color: black;
+    border-width: .5px;
+ 	border-radius: 5px;
+ 	box-shadow: 0 5px #C55A11;
+ 	width: 200px;
+}
+
 /*adjusts text size and color inside each block*/
 nav ul li a{
 	text-decoration: none;
@@ -140,15 +159,23 @@ nav ul li a{
 }
 
 /*changes the color and look for nav bar when user hovers over*/
-.navigation:hover {
+#startButton:hover, .navigation:hover {
 background-color: #e6ac00;
 cursor: pointer;
 }
 
-.navigation:active {
+#startButton:active, .navigation:active {
 background-color: #e6ac00;
   box-shadow: 0 3px #C55A11;
   transform: translateY(4px);
+}
+
+#start{
+
+  position: absolute;
+  top: 90%;
+    left: 50%;
+    transform: translate(-50%, 0);
 }
 
 #splash:active {
@@ -177,6 +204,7 @@ main {
 	padding-top: 10px;
 	margin-left:auto; 
 	margin-right:auto;
+	display: none;
 }
 
 #turn
@@ -267,4 +295,21 @@ input[type=checkbox]:checked + label:before {
   background-color: #FFC000;
   border-color: #C55A11;
   color: black;
+}
+
+.fade-in {
+	opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 2s;
+}
+
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }
