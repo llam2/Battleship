@@ -1,3 +1,7 @@
+*{
+	font-family: cursive;
+}
+
 #splash
 {
 	width: 42px;
@@ -25,15 +29,6 @@
  	border-radius: 0px;
 }
 
-.fill
-{
-	width: 42px;
-	height: 42px;
-	border: 0;
- 	box-shadow:none;
- 	border-radius: 0px;
-}
-
 table 
 {
 	border-collapse: collapse;
@@ -49,7 +44,16 @@ header
 
 .grid
 {
-	border: solid 1px black;
+	outline: solid 1.5px aqua;
+	z-index: -1;
+}
+
+.grid:hover
+{
+	outline: solid 2.5px blue;
+	background: linear-gradient(to bottom right, #36D1DC, #5B86E5);
+	box-shadow: inset 0px 0px 50px #4195fc;
+	z-index: 1;
 }
 
 .coord
@@ -59,6 +63,7 @@ header
 	border: 0;
  	box-shadow:none;
  	border-radius: 0px;
+ 	background: linear-gradient(to bottom right, #36D1DC, #5B86E5);
 }
 
 .ycoord
@@ -82,6 +87,7 @@ input:hover
 {
 	background: url(bomb.gif);
 	background-size: 42px 42px;
+	cursor: pointer;
 }
 
 nav {
@@ -136,6 +142,7 @@ nav ul li a{
 /*changes the color and look for nav bar when user hovers over*/
 .navigation:hover {
 background-color: #e6ac00;
+cursor: pointer;
 }
 
 .navigation:active {
@@ -204,10 +211,60 @@ audio
 	display: none;
 }
 
+label
+{
+	cursor: pointer;
+	user-select: none;
+}
+
 
 h1
 {
 	font-weight: bold;
-	font-size: 24;
+	font-size: 48px;
 	text-align: center;
+}
+
+#optionsBox
+{
+	margin-top: 75px;
+	text-align: center;
+}
+
+input[type=checkbox] + label {
+  display: block;
+  margin: 0.2em;
+  cursor: pointer;
+  padding: 0.2em;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+input[type=checkbox] {
+  display: none;
+}
+
+input[type=checkbox] + label:before {
+  content: "\2714";
+  border: 0.1em solid #000;
+  border-radius: 0.2em;
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  padding-left: 0.2em;
+  padding-bottom: 0.3em;
+  margin-right: 0.2em;
+  vertical-align: bottom;
+  color: transparent;
+  transition: .2s;
+}
+
+input[type=checkbox] + label:active:before {
+  transform: scale(0);
+}
+
+input[type=checkbox]:checked + label:before {
+  background-color: #FFC000;
+  border-color: #C55A11;
+  color: black;
 }
