@@ -82,5 +82,28 @@ function soundFXToggle(cb) {
 
 }
 
+function start() {
+
+/*alert("Hi");*/
+	var audio2 = document.getElementsByTagName("audio")[2];
+	audio2.play();
+
+	var show = document.getElementsByTagName("main")[0];
+	show.style.display = "block";
+
+	var button1 = document.getElementsByClassName("navigation")[0];
+	button1.style.display = "inline-block";
+
+	var button2 = document.getElementsByClassName("navigation")[1];
+	button2.style.display = "inline-block";
+
+	var button3 = document.getElementsByClassName("navigation")[2];
+	button3.style.display = "inline-block";
+
+	var start = document.getElementById("start");
+	start.style.display = "none";
+
+};
+
 
 
