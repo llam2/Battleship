@@ -4,7 +4,7 @@
 <!--<%= link_to 'One Player', controller: 'player' %>-->
 
 
-	<head>
+<head>
 		<meta charset="UTF-8">
 		<title>PracticeBattleship</title>
 		<link rel="stylesheet" type="text/css" href="index.css">
@@ -45,9 +45,9 @@
 
   		<tr>
     		<td class="ycoord">A</td>
-   			<td class="grid"><button type="button" id="splash">A1</button></td>
-   			<td class="grid"><button type="button" id="smoke">A2</button></td>
-   			<td class="grid"><button type="button" id="explode">A3</button></td>
+   			<td class="grid"><button type="button" id="splash" class="coord">A1</button></td>
+   			<td class="grid"><button type="button" id="smoke" class="coord">A2</button></td>
+   			<td class="grid"><button type="button" id="explode" class="coord">A3</button></td>
     		<td class="grid"><form><input onmouseover="playclip();" type="submit" value="A4" class="coord"></form></td>
     		<td class="grid"><form><input onmouseover="playclip();" type="submit" value="A5" class="coord"></form></td>
     		<td class="grid"><form><input onmouseover="playclip();" type="submit" value="A6" class="coord"></form></td>
@@ -59,7 +59,7 @@
 
   		<tr>
     		<td class="ycoord">B</td>
-   			<td class="grid"><button type="button" onmouseover="playclip();" onclick="playclip2();" class="fill">B1</button></td>
+   			<td class="grid"><button type="button" onmouseover="playclip();" onclick="playclip2();" class="coord">B1</button></td>
     		<td class="grid"><form><input onmouseover="playclip();" type="submit" value="B2" class="coord"></form></td>
     		<td class="grid"><form><input onmouseover="playclip();" type="submit" value="B3" class="coord"></form></td>
     		<td class="grid"><form><input onmouseover="playclip();" type="submit" value="B4" class="coord"></form></td>
@@ -190,6 +190,13 @@
 
 	<div id="options">
 		<h1>Options</h1>
+		<form action="/action_page.php" method="get" id="optionsBox">
+			<input type="checkbox" id="fruit1" name="fruit-1" value="Apple">
+  			<input type="checkbox" id="Music" value="Music" onchange="musicToggle(this);">
+			<label for="Music">Turn off Music<br></label>
+			<input type="checkbox" id="SoundFX" value="SoundFX" onchange="soundFXToggle(this);">
+  			<label for="SoundFX">Turn off SoundFX<br></label>
+		</form>
 	</div>
 
 	<div id="scores">
@@ -197,7 +204,7 @@
 	</div>
 
 
-	<audio controls autoplay loop>
+	<audio controls autoplay loop id="backgroundMusic">
   		<source src="/assets/oceanSounds2.mp3" type="audio/mp3">
 	</audio>
 	<audio>
