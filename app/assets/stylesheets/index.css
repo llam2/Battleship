@@ -2,6 +2,7 @@
 	font-family: cursive;
 }
 
+
 #splash
 {
 	width: 42px;
@@ -111,31 +112,11 @@ nav ul li{
 	text-align: center;
 }
 
-.navigation
-{
-	display: none;
- 	padding: 10px 20px;
- 	font-size: 15px;
- 	font-weight: bold;
- 	cursor: pointer;
- 	text-align: center;
- 	text-decoration: none;
- 	outline: none;
- 	background-color: #FFC000;
- 	border-style: solid;
-    border-color: black;
-    border-width: .5px;
- 	border-radius: 5px;
- 	box-shadow: 0 5px #C55A11;
- 	width: 200px;
-
-}
-
 #startButton
 {
 	display: inline-block;
- 	padding: 10px 20px;
- 	font-size: 15px;
+ 	padding: 20px 30px;
+ 	font-size: 20px;
  	font-weight: bold;
  	cursor: pointer;
  	text-align: center;
@@ -147,7 +128,7 @@ nav ul li{
     border-width: .5px;
  	border-radius: 5px;
  	box-shadow: 0 5px #C55A11;
- 	width: 200px;
+ 	width: 250px;
 }
 
 /*adjusts text size and color inside each block*/
@@ -173,7 +154,7 @@ background-color: #e6ac00;
 #start{
 
   position: absolute;
-  top: 90%;
+  top: 75%;
     left: 50%;
     transform: translate(-50%, 0);
 }
@@ -204,6 +185,16 @@ main {
 	padding-top: 10px;
 	margin-left:auto; 
 	margin-right:auto;
+	margin-top: 100px; 
+	display: none;
+	opacity: 0;
+ 	animation-fill-mode: forwards;
+	animation-duration: 1s;
+	backface-visibility: hidden;
+	animation-delay: 1s;
+}
+
+aside{
 	display: none;
 }
 
@@ -224,17 +215,7 @@ audio
     border-width: 2px;
 }
 
-#wholeGrid
-{
-	display: none;
-}
-
-#options
-{
-	display: none;
-}
-
-#scores
+#wholeGrid, #options, #scores
 {
 	display: none;
 }
@@ -251,6 +232,7 @@ h1
 	font-weight: bold;
 	font-size: 48px;
 	text-align: center;
+	user-select: none;
 }
 
 #optionsBox
@@ -297,19 +279,110 @@ input[type=checkbox]:checked + label:before {
   color: black;
 }
 
-.fade-in {
+.fade-inout{
 	opacity: 1;
-	animation-name: fadeInOpacity;
-	animation-iteration-count: 1;
+	animation-name: fadeInOutOpacity;
+	animation-iteration-count: infinite;
 	animation-timing-function: ease-in;
-	animation-duration: 2s;
+	animation-duration: 2.5s;
 }
 
-@keyframes fadeInOpacity {
+.fade-inout:hover{
+	padding: 20px 30px;
+ 	font-size: 15px;
+ 	font-weight: bold;
+ 	cursor: pointer;
+ 	text-align: center;
+ 	text-decoration: none;
+ 	outline: none;
+ 	background-color: #FFC000;
+ 	border-style: solid;
+    border-color: black;
+    border-width: .5px;
+ 	border-radius: 5px;
+ 	box-shadow: 0 5px #C55A11;
+ 	width: 250px;
+ 	animation: none;
+}
+
+@keyframes fadeInOutOpacity {
+	0% {
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+.navigation
+{
+	display: none;
+	/*display: inline-block;*/
+ 	padding: 10px 20px;
+ 	font-size: 15px;
+ 	font-weight: bold;
+ 	cursor: pointer;
+ 	text-align: center;
+ 	text-decoration: none;
+ 	outline: none;
+ 	background-color: #FFC000;
+ 	border-style: solid;
+    border-color: black;
+    border-width: .5px;
+ 	border-radius: 5px;
+ 	box-shadow: 0 5px #C55A11;
+ 	width: 200px;
+ 	margin-top: 100px;
+ 	opacity: 0;
+ 	animation-fill-mode: forwards;
+	animation-duration: 1s;
+	backface-visibility: hidden;
+	animation-delay: 1s;
+
+}
+
+@keyframes fadeIn {
 	0% {
 		opacity: 0;
 	}
 	100% {
 		opacity: 1;
+	}
+}
+
+.title
+{
+	display: inline-block;
+	width:850px; 
+	height:200px;
+	position: absolute;
+  	top: 30%;
+    left: 50%;
+    transform: translate(-50%, -250%);
+    animation-fill-mode: forwards;
+	animation-duration: 1s;
+	backface-visibility: hidden;
+
+}
+
+@keyframes slide{
+	0%{
+		transform: translate(-50%, -250%) translateZ(0));
+	}
+	100%{
+    	transform: translate(-50%, -50%);
+	}
+}
+
+
+@keyframes shrink{
+	0%{
+		transform: translate(-50%, -50%) translateZ(0) scale(1,1);
+	}
+	100%{
+    	transform: translate(-50%, -130%) scale(.5, .5);
 	}
 }

@@ -3,6 +3,7 @@ window.onload = function() {
 	var audio2 = document.getElementsByTagName("audio")[2];
 	audio.volume = .5;
 	audio2.volume = .5;
+	slide();
 };
 
 
@@ -11,7 +12,7 @@ function playclip() {
 	var audio = document.getElementsByTagName("audio")[1];
 	audio.play();
 
-}
+};
 
 function onePlayer() {
 
@@ -24,7 +25,7 @@ function onePlayer() {
 	x.style.display = "block";
 	audio.play();
 
-}
+};
 
 function options() {
 
@@ -37,7 +38,7 @@ function options() {
 	y.style.display = "block";
 	audio.play();
 
-}
+};
 
 function scores() {
 
@@ -50,7 +51,7 @@ function scores() {
 	z.style.display = "block";
 	audio.play();
 
-}
+};
 
 function musicToggle(cb) {
 
@@ -64,7 +65,7 @@ function musicToggle(cb) {
 		audio.volume = 1;
 	}
 
-}
+};
 
 function soundFXToggle(cb) {
 
@@ -79,8 +80,7 @@ function soundFXToggle(cb) {
 		audio.volume = .5;
 		audio2.volume = .5;
 	}
-
-}
+};
 
 function start() {
 
@@ -91,6 +91,18 @@ function start() {
 	var show = document.getElementsByTagName("main")[0];
 	show.style.display = "block";
 
+	var navClass1 = document.getElementsByClassName("navigation")[0];
+	navClass1.style.animationName = "fadeIn";
+
+	var navClass2 = document.getElementsByClassName("navigation")[1];
+	navClass2.style.animationName = "fadeIn"
+
+	var navClass3 = document.getElementsByClassName("navigation")[2];
+	navClass3.style.animationName = "fadeIn"
+
+	var mainTag = document.getElementsByTagName("main")[0];
+	mainTag.style.animationName = "fadeIn";
+
 	var button1 = document.getElementsByClassName("navigation")[0];
 	button1.style.display = "inline-block";
 
@@ -100,10 +112,37 @@ function start() {
 	var button3 = document.getElementsByClassName("navigation")[2];
 	button3.style.display = "inline-block";
 
+	var button4 = document.getElementsByClassName("navigation")[3];
+	button4.style.display = "inline-block";
+
 	var start = document.getElementById("start");
 	start.style.display = "none";
 
+	var titleClass = document.getElementsByClassName("title")[0];
+	titleClass.style.animationName = "shrink";
+
 };
+
+function slide() {
+	var titleClass = document.getElementsByClassName("title")[0];
+	titleClass.style.animationName = "slide";
+};
+
+/*
+function exit() {
+
+	var audio = document.getElementsByTagName("audio")[2];
+	var x = document.getElementById("exit");
+	x.style.display = "none";
+	var x = document.getElementById("wholeGrid");
+	x.style.display = "none";
+	var y = document.getElementById("options");
+	y.style.display = "none";
+	var z = document.getElementById("scores");
+	z.style.display = "none";
+	audio.play();
+
+};*/
 
 
 
