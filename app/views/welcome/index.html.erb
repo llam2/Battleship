@@ -1,10 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-<!--We will use this later-->
-<!--<%= link_to 'One Player', controller: 'player' %>-->
 
-
-<head>
+	<head>
 		<meta charset="UTF-8">
 		<title>PracticeBattleship</title>
 		<link rel="stylesheet" type="text/css" href="index.css">
@@ -14,14 +11,16 @@
 	<body>
 
 		<header>
-			<img src="/assets/Title.png" alt="Title" style="width:475px; height:100px;">
+			<img src="/assets/Title.png" alt="Title" class="title">
+			<!--475 100-->
 		</header>
 
 		<nav>
 			<ul>
-			<li><button type="button" onmouseover="playclip();" onclick="onePlayer();" class="navigation" id="onePlayer">1-Player</button></li>
+			<li><button type="button" onmouseover="playclip();" onclick="onePlayer();" class="navigation">1-Player</button></li>
 			<li><button type="button" onmouseover="playclip();" onclick="options();" class="navigation">Options</button></li>
 			<li><button type="button" onmouseover="playclip();" onclick="scores();" class="navigation">Scores</button></li>
+			<li><button type="button" onmouseover="playclip();" onclick="exit();" class="navigation">Exit</button></li>
 			</ul>
 		</nav>
 		<br>
@@ -183,8 +182,6 @@
     		<td class="grid"><form><input onmouseover="playclip();" type="submit" value="J10" class="coord"></form></td>
   		</tr>
 
-
-
 	</table>
 	</div>
 
@@ -216,8 +213,8 @@
 
 
 	</main>
-	
-	<div id="start"><button type="button" onmouseover="playclip();" onclick="start();" id="startButton" class="fade-in">Start</button></div>
+
+	<div id="start"><button type="button" onmouseover="playclip(); still();" onclick="start();" id="startButton" class="fade-inout">Start</button></div>
 
 	<aside id="turn">
 		<img src="/assets/yourTurn.gif" alt="Monkey" class="imgBorder" style="position:absolute; top:250px; left:150px; width:100px; height:100px;">
