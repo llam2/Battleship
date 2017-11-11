@@ -49,6 +49,25 @@ header
 	z-index: -1;
 }
 
+#layoutGrid 
+{
+	border-collapse: collapse;
+	width: 450px;
+	height: 420px;
+}
+
+.grid2
+{
+	outline: solid 1.5px black;
+	width: 45px;
+	height: 42px;
+	border: 0;
+ 	box-shadow:none;
+ 	border-radius: 0px;
+ 	background: gray;
+ 	text-align: center
+}
+
 .grid:hover
 {
 	outline: solid 2.5px blue;
@@ -84,7 +103,7 @@ body
     background-size: cover;
 }
 
-input:hover
+.coord:hover
 {
 	background: url(bomb.gif);
 	background-size: 42px 42px;
@@ -192,6 +211,45 @@ main {
 	animation-duration: 1s;
 	backface-visibility: hidden;
 	animation-delay: 1s;
+}
+
+#shipWindow{
+	display: none;
+	background-color: #b3e6ff;
+	background: rgba(179, 230, 255, 0.7);
+	width: 340px;
+	height: 490px;
+	padding-top: 10px;
+	position: absolute;
+	left: 72%;
+	top: 26%;
+}
+
+#shipSubmit{
+	padding: 10px 20px;
+ 	font-size: 15px;
+ 	font-weight: bold;
+ 	cursor: pointer;
+ 	text-align: center;
+ 	text-decoration: none;
+ 	outline: none;
+ 	background-color: #FFC000;
+ 	border-style: solid;
+    border-color: black;
+    border-width: .5px;
+ 	border-radius: 5px;
+ 	box-shadow: 0 5px #C55A11;
+}
+
+#shipSubmit:hover {
+background-color: #e6ac00;
+cursor: pointer;
+}
+
+#shipSubmit:active {
+background-color: #e6ac00;
+  box-shadow: 0 3px #C55A11;
+  transform: translateY(4px);
 }
 
 aside{
@@ -370,7 +428,7 @@ input[type=checkbox]:checked + label:before {
 
 @keyframes slide{
 	0%{
-		transform: translate(-50%, -250%) translateZ(0));
+		transform: translate(-50%, -250%) translateZ(0);
 	}
 	100%{
     	transform: translate(-50%, -50%);
