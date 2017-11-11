@@ -104,7 +104,7 @@ function start() {
 	mainTag.style.animationName = "fadeIn";
 
 	var button1 = document.getElementsByClassName("navigation")[0];
-	button1.style.display = "inline-block";
+	button1.style.display = "inline-block;";
 
 	var button2 = document.getElementsByClassName("navigation")[1];
 	button2.style.display = "inline-block";
