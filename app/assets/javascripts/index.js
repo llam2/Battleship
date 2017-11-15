@@ -21,6 +21,8 @@ function onePlayer() {
 	y.style.display = "none";
 	var z = document.getElementById("scores");
 	z.style.display = "none";
+	var a = document.getElementById("shipWindow");
+	a.style.display = "block";
 	var x = document.getElementById("wholeGrid");
 	x.style.display = "block";
 	audio.play();
@@ -34,6 +36,8 @@ function options() {
 	x.style.display = "none";
 	var z = document.getElementById("scores");
 	z.style.display = "none";
+	var a = document.getElementById("shipWindow");
+	a.style.display = "none";
 	var y = document.getElementById("options");
 	y.style.display = "block";
 	audio.play();
@@ -47,6 +51,8 @@ function scores() {
 	x.style.display = "none";
 	var y = document.getElementById("options");
 	y.style.display = "none";
+	var a = document.getElementById("shipWindow");
+	a.style.display = "none";
 	var z = document.getElementById("scores");
 	z.style.display = "block";
 	audio.play();
@@ -112,21 +118,31 @@ function start() {
 	var button3 = document.getElementsByClassName("navigation")[2];
 	button3.style.display = "inline-block";
 
-	var button4 = document.getElementsByClassName("navigation")[3];
-	button4.style.display = "inline-block";
-
 	var start = document.getElementById("start");
 	start.style.display = "none";
 
 	var titleClass = document.getElementsByClassName("title")[0];
 	titleClass.style.animationName = "shrink";
 
+	var a = document.getElementById("shipWindow");
+	a.style.display = "block";
 };
 
 function slide() {
 	var titleClass = document.getElementsByClassName("title")[0];
 	titleClass.style.animationName = "slide";
 };
+
+function shipSubmit() {
+	var divGrid2 = document.getElementById("divGrid2");
+	divGrid2.style.display = "none";
+	var shipWindow = document.getElementById("shipWindow");
+	shipWindow.style.display = "none";
+	var audio = document.getElementsByTagName("audio")[2];
+	var x = document.getElementById("wholeGrid");
+	x.style.display = "block";
+	audio.play();
+}
 
 /*
 function exit() {
