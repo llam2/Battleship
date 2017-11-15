@@ -10,16 +10,8 @@ class PlayersController < ApplicationController
     
     def create
         @player = Player.all
-        
-         if @player.save
-            
-            redirect_to @player
-        else
-            render 'new'
-        end
 end
 
-def destroy
-    @player = Player.find(params[:id])
-    @player.destroy
+    
+
 end
