@@ -1,3 +1,3 @@
 class Ship < ApplicationRecord
-    belong_to player
+    belongs_to :player
 end
