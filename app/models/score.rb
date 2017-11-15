@@ -1,4 +1,3 @@
 class Score < ApplicationRecord
-    belongs_to players
-    
+   belong_to player
 end
