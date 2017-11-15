@@ -23,8 +23,12 @@ function onePlayer() {
 	z.style.display = "none";
 	var a = document.getElementById("shipWindow");
 	a.style.display = "block";
-	var x = document.getElementById("wholeGrid");
-	x.style.display = "block";
+	var b = document.getElementById("divGrid2");
+	b.style.display = "block";
+	/*var x = document.getElementById("wholeGrid");
+	x.style.display = "block";*/
+	var start = document.getElementById("nameForm");
+	start.style.display = "none";
 	audio.play();
 
 };
@@ -38,8 +42,12 @@ function options() {
 	z.style.display = "none";
 	var a = document.getElementById("shipWindow");
 	a.style.display = "none";
+	var b = document.getElementById("divGrid2");
+	b.style.display = "none";
 	var y = document.getElementById("options");
 	y.style.display = "block";
+	var start = document.getElementById("nameForm");
+	start.style.display = "none";
 	audio.play();
 
 };
@@ -55,6 +63,10 @@ function scores() {
 	a.style.display = "none";
 	var z = document.getElementById("scores");
 	z.style.display = "block";
+	var b = document.getElementById("divGrid2");
+	b.style.display = "none";
+	var start = document.getElementById("nameForm");
+	start.style.display = "none";
 	audio.play();
 
 };
@@ -121,11 +133,12 @@ function start() {
 	var start = document.getElementById("start");
 	start.style.display = "none";
 
+	var start = document.getElementById("nameForm");
+	start.style.display = "block";
+
+
 	var titleClass = document.getElementsByClassName("title")[0];
 	titleClass.style.animationName = "shrink";
-
-	var a = document.getElementById("shipWindow");
-	a.style.display = "block";
 };
 
 function slide() {
@@ -143,22 +156,6 @@ function shipSubmit() {
 	x.style.display = "block";
 	audio.play();
 }
-
-/*
-function exit() {
-
-	var audio = document.getElementsByTagName("audio")[2];
-	var x = document.getElementById("exit");
-	x.style.display = "none";
-	var x = document.getElementById("wholeGrid");
-	x.style.display = "none";
-	var y = document.getElementById("options");
-	y.style.display = "none";
-	var z = document.getElementById("scores");
-	z.style.display = "none";
-	audio.play();
-
-};*/
 
 
 

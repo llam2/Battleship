@@ -1,5 +1,5 @@
 *{
-	font-family: cursive;
+	font-family: Perpetua;
 }
 
 
@@ -54,6 +54,11 @@ header
 	border-collapse: collapse;
 	width: 450px;
 	height: 420px;
+}
+
+#divGrid2
+{
+	display: none;
 }
 
 .grid2
@@ -223,6 +228,17 @@ main {
 	position: absolute;
 	left: 72%;
 	top: 26%;
+}
+
+#nameForm{
+	display: none;
+}
+
+#nameBox{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
 
 #shipSubmit{
