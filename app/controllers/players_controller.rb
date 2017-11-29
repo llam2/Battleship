@@ -10,8 +10,19 @@ class PlayersController < ApplicationController
     
     def create
         @player = Player.all
-end
-
+    end
+    
+     def edit
+        @player =  Article.find(params[:id])
+    end
+    def update
+        @player = Article.find(params[:id])
+        if @player.update()
+        redirect_to @article
+        else
+        render 'edit'
+        end
+    end
     
 
 end
