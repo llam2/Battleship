@@ -13,16 +13,14 @@ class PlayersController < ApplicationController
     end
     
      def edit
-        @player =  Article.find(params[:id])
+        @player =  Player.find(params[:id])
     end
     def update
-        @player = Article.find(params[:id])
+        @player = Player.find(params[:id])
         if @player.update()
         redirect_to @article
         else
         render 'edit'
         end
     end
-    
-
 end
