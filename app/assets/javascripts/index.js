@@ -85,6 +85,13 @@ function musicToggle(cb) {
 
 };
 
+function nameBox() {
+	if (document.getElementById('fname').value == "") {
+		alert("please enter name");
+		return false;
+	}
+}
+
 function soundFXToggle(cb) {
 
 	var audio = document.getElementsByTagName("audio")[1];
@@ -109,6 +116,8 @@ function start() {
 	var show = document.getElementsByTagName("main")[0];
 	show.style.display = "block";
 
+	/*
+
 	var navClass1 = document.getElementsByClassName("navigation")[0];
 	navClass1.style.animationName = "fadeIn";
 
@@ -117,10 +126,10 @@ function start() {
 
 	var navClass3 = document.getElementsByClassName("navigation")[2];
 	navClass3.style.animationName = "fadeIn"
-
+*/
 	var mainTag = document.getElementsByTagName("main")[0];
 	mainTag.style.animationName = "fadeIn";
-
+/*
 	var button1 = document.getElementsByClassName("navigation")[0];
 	button1.style.display = "inline-block";
 
@@ -129,7 +138,7 @@ function start() {
 
 	var button3 = document.getElementsByClassName("navigation")[2];
 	button3.style.display = "inline-block";
-
+*/
 	var start = document.getElementById("start");
 	start.style.display = "none";
 
@@ -156,6 +165,22 @@ function shipSubmit() {
 	x.style.display = "block";
 	audio.play();
 }
+
+/*
+function exit() {
+
+	var audio = document.getElementsByTagName("audio")[2];
+	var x = document.getElementById("exit");
+	x.style.display = "none";
+	var x = document.getElementById("wholeGrid");
+	x.style.display = "none";
+	var y = document.getElementById("options");
+	y.style.display = "none";
+	var z = document.getElementById("scores");
+	z.style.display = "none";
+	audio.play();
+
+};*/
 
 
 
