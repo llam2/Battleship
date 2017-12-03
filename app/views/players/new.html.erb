@@ -1,9 +1,9 @@
-<h2>Second page</h2>
+<h2>Enter a Username and Password</h2>
 
-<%= form_for :player, url: player_path do |f| %>
+<%= form_for @player do |f| %>
   <p>
-    <%= f.label :firstName %><br>
-    <%= f.text_field :firstName %>
+    <%= f.label :userName %><br>
+    <%= f.text_field :userName %>
   </p>
  
   <p>
@@ -15,3 +15,5 @@
     <%= f.submit %>
   </p>
 <% end %>
+
+<%= link_to 'Back', root_path %>
