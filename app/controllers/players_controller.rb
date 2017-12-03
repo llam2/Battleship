@@ -15,7 +15,7 @@ class PlayersController < ApplicationController
         
         if @player.save
     
-            redirect_to @player
+            redirect_to root_path
         else
             render 'new'
         end
