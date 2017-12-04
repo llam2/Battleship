@@ -3,33 +3,6 @@
 }
 
 
-#splash
-{
-	width: 42px;
-	height: 42px;
-	border: 0;
- 	box-shadow:none;
- 	border-radius: 0px;
-}
-
-#smoke
-{
-	width: 42px;
-	height: 42px;
-	border: 0;
- 	box-shadow:none;
- 	border-radius: 0px;
-}
-
-#explode
-{
-	width: 42px;
-	height: 42px;
-	border: 0;
- 	box-shadow:none;
- 	border-radius: 0px;
-}
-
 table 
 {
 	border-collapse: collapse;
@@ -54,11 +27,6 @@ header
 	border-collapse: collapse;
 	width: 450px;
 	height: 420px;
-}
-
-#divGrid2
-{
-	display: none;
 }
 
 .grid2
@@ -115,74 +83,6 @@ body
 	cursor: pointer;
 }
 
-nav {
-	text-align: center;
-}
-
-nav ul
-{
-	display: inline-block;
-	padding-left: 10px;
-	margin-right: 5px;
-}
-
-/*removes bullets and creates lines to separate each block*/
-nav ul li{
-	margin-left: 10px;
-	list-style-type: none;
-	width: 200px;
-	float: left;
-	height: 20px;
-	text-align: center;
-}
-
-#startButton
-{
-	display: inline-block;
- 	padding: 20px 30px;
- 	font-size: 20px;
- 	font-weight: bold;
- 	cursor: pointer;
- 	text-align: center;
- 	text-decoration: none;
- 	outline: none;
- 	background-color: #FFC000;
- 	border-style: solid;
-    border-color: black;
-    border-width: .5px;
- 	border-radius: 5px;
- 	box-shadow: 0 5px #C55A11;
- 	width: 250px;
-}
-
-/*adjusts text size and color inside each block*/
-nav ul li a{
-	text-decoration: none;
-	color: black;
-	line-height: 25px;
-	display: block;
-}
-
-/*changes the color and look for nav bar when user hovers over*/
-#startButton:hover, .navigation:hover {
-background-color: #e6ac00;
-cursor: pointer;
-}
-
-#startButton:active, .navigation:active {
-background-color: #e6ac00;
-  box-shadow: 0 3px #C55A11;
-  transform: translateY(4px);
-}
-
-#start{
-
-  position: absolute;
-  top: 75%;
-    left: 50%;
-    transform: translate(-50%, 0);
-}
-
 #splash:active {
 	background: url(splash2.gif);
 	background-size: 42px 42px;
@@ -195,7 +95,7 @@ background-color: #e6ac00;
 	background-position: 0px -1px;
 }
 
-#explode:active {
+it#explode:active {
 	background: url(explode2.gif);
 	background-size: 42px 42px;
 }
@@ -209,9 +109,7 @@ main {
 	padding-top: 10px;
 	margin-left:auto; 
 	margin-right:auto;
-	margin-top: 100px; 
-	display: none;
-	opacity: 0;
+	margin-top: 100px;
  	animation-fill-mode: forwards;
 	animation-duration: 1s;
 	backface-visibility: hidden;
@@ -219,15 +117,13 @@ main {
 }
 
 #shipWindow{
-	display: none;
 	background-color: #b3e6ff;
 	background: rgba(179, 230, 255, 0.7);
 	width: 340px;
-	height: 490px;
-	padding-top: 10px;
+	height: 500px;
 	position: absolute;
 	left: 72%;
-	top: 26%;
+	top: 17.5%;
 }
 
 #nameForm{
@@ -290,11 +186,6 @@ audio
 }
 
 #wholeGrid
-{
-	/*display: none;*/
-}
-
-#options, #scores
 {
 	display: none;
 }
@@ -435,25 +326,18 @@ input[type=checkbox]:checked + label:before {
 .title
 {
 	display: inline-block;
-	width:850px; 
-	height:200px;
+	width:425px; 
+	height:100px;
 	position: absolute;
   	top: 30%;
     left: 50%;
-    transform: translate(-50%, -250%);
-    animation-fill-mode: forwards;
-	animation-duration: 1s;
+    transform: translate(-50%, -210%);
 	backface-visibility: hidden;
 
 }
 
 #optionsButton
 {
-	background: url("settingsWheel.png");
-	background-color: rgba(0,0,0,0.35);
-	background-repeat: no-repeat;
-	background-position: 5%;
-	background-size: 25px 25px;
 	color: white;
 	padding: 10px 20px;
  	font-size: 15px;
@@ -462,24 +346,25 @@ input[type=checkbox]:checked + label:before {
  	text-align: center;
  	text-decoration: none;
  	outline: none;
- 	/*background-color: #FFC000;
+ 	background-color: #FFC000;
+ 	border-style: solid;
+    border-color: black;
     border-width: .5px;
  	border-radius: 5px;
- 	box-shadow: 0 5px #C55A11;*/
- 	width: 150px;
+ 	box-shadow: 0 5px #C55A11;
+ 	width: 200px;
  	margin-top: 100px;
  	position: absolute;
- 	top: 78%;
- 	left: 1%;
+ 	top: 70%;
+ 	left: 5%;
 
 }
 
 #scoresButton
 {
 	background: url("scoreList2.png");
-	background-color: rgba(0,0,0,0.35);
 	background-repeat: no-repeat;
-	background-position: 5%;
+	background-position: -15%;
 	background-size: 25px 25px;
 	color: white;
 	padding: 10px 20px;
@@ -489,17 +374,11 @@ input[type=checkbox]:checked + label:before {
  	text-align: center;
  	text-decoration: none;
  	outline: none;
- 	/*background-color: #FFC000;
- 	border-style: solid;
-    border-color: black;
-    border-width: .5px;
- 	border-radius: 5px;
- 	box-shadow: 0 5px #C55A11;*/
- 	width: 150px;
- 	margin-top: 100px;
+ 	border: none;
  	position: absolute;
- 	top: 78%;
- 	left: 88%;
+ 	top: 70%;
+ 	left: 75%;
+
 
 }
 
@@ -512,12 +391,3 @@ input[type=checkbox]:checked + label:before {
 	}
 }
 
-
-@keyframes shrink{
-	0%{
-		transform: translate(-50%, -50%) translateZ(0) scale(1,1);
-	}
-	100%{
-    	transform: translate(-50%, -130%) scale(.5, .5);
-	}
-}
