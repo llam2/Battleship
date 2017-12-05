@@ -138,7 +138,7 @@ function start() {
 
 	var button3 = document.getElementsByClassName("navigation")[2];
 	button3.style.display = "inline-block";
-*/
+
 	var start = document.getElementById("start");
 	start.style.display = "none";
 
@@ -148,6 +148,7 @@ function start() {
 
 	var titleClass = document.getElementsByClassName("title")[0];
 	titleClass.style.animationName = "shrink";
+	*/
 };
 
 function slide() {
