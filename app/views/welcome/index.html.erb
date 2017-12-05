@@ -72,8 +72,9 @@
 
 	</main>
 
-	<div id="start">
-      <button type="button" onmouseover="playclip(); still();" onclick="start();" id="startButton" class="fade-inout">Start</button>
+<div id="start">
+	<%= link_to 'Start', new_player_path, id: "startButton", class: "fade-inout" %>
+      <!--<button type="button" onmouseover="playclip(); still();" onclick="start();" id="startButton" class="fade-inout">Start</button>-->
   </div>
 
   <div id="otherButtons">
