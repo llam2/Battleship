@@ -4,9 +4,10 @@ Rails.application.routes.draw do
    
   root 'welcome#index'
   get 'welcome/index'
-  
+  get 'game_page/index'
   resources :players
   resources :scores
+  
   
   
 
