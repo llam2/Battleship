@@ -265,6 +265,7 @@ p {
 
 input[type=text] {
   width: 10px;
+  text-align: center;
 }
 
 .shipImage5 {
