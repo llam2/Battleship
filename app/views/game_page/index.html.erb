@@ -4,7 +4,11 @@
   <head>
     <meta charset="UTF-8">
     <title>PracticeBattleship</title>
-    <link rel="stylesheet" type="text/css" href="gamePage.css">
+    <!-- <link rel="stylesheet" type="text/css" href="gamePage.css"> -->
+    <% content_for :head do %>
+    <%= stylesheet_link_tag "gamePage" %>
+    <%= javascript_include_tag "gamePage.js" %>
+    <% end %>
     <script type="text/javascript" src="gamePage.js"></script>
   </head>
 
