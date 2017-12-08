@@ -26,6 +26,10 @@ function shipSubmit() {
 	show.style.display = "block";
 }
 
+function validate() {
+	
+}
+
 function createGridArray()
 {
      var x = new Array(10);
