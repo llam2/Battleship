@@ -106,24 +106,34 @@ main {
 	background-position: center;
 	width: 510px;
 	height: 490px;
+	display: none;
 	padding-top: 10px;
 	margin-left:auto; 
 	margin-right:auto;
-	margin-top: 100px;
+	margin-top: 116.5px;
  	animation-fill-mode: forwards;
 	animation-duration: 1s;
 	backface-visibility: hidden;
 	animation-delay: 1s;
 }
 
+#divGrid2{
+	background: rgba(179, 230, 255, 0.7);
+	padding-top: 10px;
+	margin-top: 116.5px;
+	margin-left: 30px;
+	width: 510px;
+	height: 490px;
+}
+
 #shipWindow{
 	background-color: #b3e6ff;
 	background: rgba(179, 230, 255, 0.7);
-	width: 340px;
+	width: 710px;
 	height: 500px;
 	position: absolute;
-	left: 72%;
-	top: 17.5%;
+	left: 43%;
+	top: 20%;
 }
 
 #nameForm{
@@ -247,6 +257,20 @@ input[type=checkbox]:checked + label:before {
   background-color: #FFC000;
   border-color: #C55A11;
   color: black;
+}
+
+input[type=text] {
+  width: 30px;
+}
+
+form ul {
+	  list-style-type: none;
+	  margin-top: 22px;
+	  margin-left: 75px;
+}
+
+form ul li {
+	float: left;
 }
 
 .fade-inout{
