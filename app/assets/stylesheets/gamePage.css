@@ -259,8 +259,28 @@ input[type=checkbox]:checked + label:before {
   color: black;
 }
 
+p {
+	margin-left: 140px;
+}
+
 input[type=text] {
   width: 10px;
+}
+
+.shipImage5 {
+	padding-right: 10px;
+}
+
+.shipImage4 {
+	padding-right: 32px;
+}
+
+.shipImage3 {
+	padding-right: 54px;
+}
+
+.shipImage2 {
+	padding-right: 76px;
 }
 
 form ul {

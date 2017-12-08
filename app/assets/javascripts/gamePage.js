@@ -27,7 +27,21 @@ function shipSubmit() {
 }
 
 function validate() {
-	
+	alert("button works");
+	var letter1 = document.getElementById("letterCoord1");
+	var letter2 = document.getElementById("letterCoord2");
+	var letter3 = document.getElementById("letterCoord3");
+	var letter4 = document.getElementById("letterCoord4");
+	var letter5 = document.getElementById("letterCoord5");
+	var letter6 = document.getElementById("letterCoord6");
+	var letter7 = document.getElementById("letterCoord7");
+	var number1 = document.getElementById("numberCoord1");
+	var number2 = document.getElementById("numberCoord2");
+	var number3 = document.getElementById("numberCoord3");
+	var number4 = document.getElementById("numberCoord4");
+	var number5 = document.getElementById("numberCoord5");
+	var number6 = document.getElementById("numberCoord6");
+	var number7 = document.getElementById("numberCoord7");
 }
 
 function createGridArray()
