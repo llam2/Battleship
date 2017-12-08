@@ -16,7 +16,6 @@
 
     <header>
       <img src="/assets/Title.png" alt="Title" class="title">
-      <h1>GamePage</h1>
       <!--475 100-->
     </header>
 
@@ -190,11 +189,23 @@
   </table>
   </div>
 
-  <div id="shipWindow">
-      <button type="button" onmouseover="playclip();" onclick="shipSubmit();" id="shipSubmit">Submit</button>
-  </div>
+
+  
 
 
+  <audio controls autoplay loop id="backgroundMusic">
+      <source src="/assets/oceanSounds2.mp3" type="audio/mp3">
+  </audio>
+  <audio>
+    <source src="/assets/grid.mp3">
+  </audio>
+  <audio>
+    <source src="/assets/target.mp3">
+  </audio>
+
+
+  </main>
+  
   <div id="divGrid2">
   <table id="layoutGrid">
         <tr>
@@ -353,6 +364,76 @@
 
   </table>
   </div>
+<<<<<<< HEAD
+  
+  <div id="shipWindow">
+    <h1>Enter Ship Coordinates:</h1>
+      <form>
+        <ul>
+        <li>Ship 1:<br></li>
+        <li><input type="text" name="ship1"><br></li>
+        <li><label><input type="radio" name="shipDirection" value="Vertical">Vertical (Facing North)<br></label></li>
+        <li><label><input type="radio" name="shipDirection" value="Horizontal">Horizontal (Facing East)<br></label></li>
+        </ul>
+      </form>
+      <br>
+      <form>
+        <ul>
+        <li>Ship 2:<br></li>
+        <li><input type="text" name="ship1"><br></li>
+        <li><label><input type="radio" name="shipDirection" value="Vertical">Vertical (Facing North)<br></label></li>
+        <li><label><input type="radio" name="shipDirection" value="Horizontal">Horizontal (Facing East)<br></label></li>
+        </ul>
+      </form>
+      <br>      
+       <form>
+        <ul>
+        <li>Ship 3:<br></li>
+        <li><input type="text" name="ship1"><br></li>
+        <li><label><input type="radio" name="shipDirection" value="Vertical">Vertical (Facing North)<br></label></li>
+        <li><label><input type="radio" name="shipDirection" value="Horizontal">Horizontal (Facing East)<br></label></li>
+        </ul>
+      </form>
+      <br>
+      <form>
+        <ul>
+        <li>Ship 4:<br></li>
+        <li><input type="text" name="ship1"><br></li>
+        <li><label><input type="radio" name="shipDirection" value="Vertical">Vertical (Facing North)<br></label></li>
+        <li><label><input type="radio" name="shipDirection" value="Horizontal">Horizontal (Facing East)<br></label></li>
+        </ul>
+      </form>
+      <br>
+      <form>
+        <ul>
+        <li>Ship 5:<br></li>
+        <li><input type="text" name="ship1"><br></li>
+        <li><label><input type="radio" name="shipDirection" value="Vertical">Vertical (Facing North)<br></label></li>
+        <li><label><input type="radio" name="shipDirection" value="Horizontal">Horizontal (Facing East)<br></label></li>
+        </ul>
+      </form>
+      <br>
+      <form>
+        <ul>
+        <li>Ship 6:<br></li>
+        <li><input type="text" name="ship1"><br></li>
+        <li><label><input type="radio" name="shipDirection" value="Vertical">Vertical (Facing North)<br></label></li>
+        <li><label><input type="radio" name="shipDirection" value="Horizontal">Horizontal (Facing East)<br></label></li>
+        </ul>
+      </form>
+      <br>
+      <form>
+        <ul>
+        <li>Ship 7:<br></li>
+        <li><input type="text" name="ship1"><br></li>
+        <li><label><input type="radio" name="shipDirection" value="Vertical">Vertical (Facing North)<br></label></li>
+        <li><label><input type="radio" name="shipDirection" value="Horizontal">Horizontal (Facing East)<br></label></li>
+        </ul>
+      </form>
+      <br>
+      <button type="button" onmouseover="playclip();" onclick="shipSubmit();" id="shipSubmit">Submit</button>
+  </div>
+=======
 
 
   <audio controls autoplay loop id="backgroundMusic">
@@ -367,6 +448,7 @@
 
 
   </main>
+>>>>>>> 161d6adfff48280a7a76a8bc8f5d1ca7402b3a2a
 
 
   <aside id="turn">

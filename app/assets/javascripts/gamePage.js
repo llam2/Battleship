@@ -22,6 +22,8 @@ function shipSubmit() {
 	var x = document.getElementById("wholeGrid");
 	x.style.display = "block";
 	audio.play();
+	var show = document.getElementsByTagName("main")[0];
+	show.style.display = "block";
 }
 
 function createGridArray()
