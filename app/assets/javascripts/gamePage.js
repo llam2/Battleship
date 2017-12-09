@@ -43,7 +43,7 @@ function byePlane() {
 }
 
 function validate() {
-	alert("button works");
+	
 	
 	var letter1 = document.getElementById("letterCoord1").value;
 	var letter2 = document.getElementById("letterCoord2").value;
@@ -54,14 +54,36 @@ function validate() {
 	var letter7 = document.getElementById("letterCoord7").value;
 	var number1 = document.getElementById("numberCoord1").value;
 	var number2 = document.getElementById("numberCoord2").value;
-	var number3 = document.getElementById("numberCoord3").value
+	var number3 = document.getElementById("numberCoord3").value;
 	var number4 = document.getElementById("numberCoord4").value;
 	var number5 = document.getElementById("numberCoord5").value;
 	var number6 = document.getElementById("numberCoord6").value;
 	var number7 = document.getElementById("numberCoord7").value;
-	
+
+	var direction1V = document.getElementById("shipDirection1V").checked;
+	var direction1H = document.getElementById("shipDirection1H").checked;
+	var direction2V = document.getElementById("shipDirection2V").checked;
+	var direction2H = document.getElementById("shipDirection2H").checked;
+	var direction3V = document.getElementById("shipDirection3V").checked;
+	var direction3H= document.getElementById("shipDirection3H").checked;
+	var direction4V = document.getElementById("shipDirection4V").checked;
+	var direction4H = document.getElementById("shipDirection4H").checked;
+	var direction5V = document.getElementById("shipDirection5V").checked;
+	var direction5H = document.getElementById("shipDirection5H").checked;
+	var direction6V = document.getElementById("shipDirection6V").checked;
+	var direction6H = document.getElementById("shipDirection6H").checked;
+	var direction7V = document.getElementById("shipDirection7V").checked;
+	var direction7H = document.getElementById("shipDirection7H").checked;
+
+
 	var number = [number1, number2, number3, number4, number5, number6, number7];
 	var letterChar = [letter1, letter2, letter3, letter4, letter5, letter6, letter7];
+	var directionV = [direction1V, direction2V, direction3V, direction4V, direction5V, direction6V, direction7V];
+	var directionH = [direction1H, direction2H, direction3H, direction4H, direction5H, direction6H, direction7H];
+	
+
+	
+	
 	var letter = [0,0,0,0,0,0,0];
 	
 	var validation = true;
@@ -82,6 +104,17 @@ function validate() {
 			validation = false;
 		}
 		}
+		
+		//direction validation
+	for(var i = 0; i < 7; i++)
+	{
+		if(directionV[i] == false && directionH[i] == false)
+		    {
+		    	//Direction Validation Failed
+		    	validation = false;
+		    	alert("You did not choose a direction for ship " + (i+1) + "!");
+		    }
+	}
 	
 	//IN DEVELOPMENT... FOR COLLISION VALIDATION
 	for(var i = 0; i < 7; i++)
