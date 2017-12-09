@@ -1,8 +1,8 @@
 window.onload = function() {
 	var audio = document.getElementsByTagName("audio")[1];
 	var audio2 = document.getElementsByTagName("audio")[2];
-	audio.volume = .5;
-	audio2.volume = .5;
+	audio.volume = .3;
+	audio2.volume = .3;
 	slide();
 };
 

@@ -265,6 +265,7 @@ p {
 
 input[type=text] {
   width: 10px;
+  text-align: center;
 }
 
 .shipImage5 {
@@ -425,6 +426,27 @@ form ul li {
 
 
 }
+
+#jet {
+	display: none;
+	animation-fill-mode: forwards;
+	animation-duration: 1s;
+	backface-visibility: hidden;
+	animation-delay: 1s;
+	position: absolute;
+	left: -50%;
+}
+
+@keyframes fly{
+	0%{
+		transform: translate(395%, -70%) translateZ(0) scale(.5, .5);
+	}
+	100%{
+    	transform: translate(-100%, -250%) scale(3, 3);
+    	display: none;
+	}
+}
+
 
 @keyframes slide{
 	0%{
