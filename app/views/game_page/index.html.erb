@@ -51,7 +51,7 @@
         <td class="grid"><button type="button" id="splash" class="coord">A0</button></td>
         <td class="grid"><button type="button" id="smoke" class="coord">A1</button></td>
         <td class="grid"><button type="button" id="explode" class="coord">A2</button></td>
-        <td class="grid"><button onmouseover="playclip();" type="button" value="A3" class="coord">A3</button></td>
+        <td class="grid"><button onmouseover="playclip();" onclick="flyPlane();" type="button" value="A3" class="coord">A3</button></td>
         <td class="grid"><button onmouseover="playclip();" type="button" value="A4" class="coord">A4</button></td>
         <td class="grid"><button onmouseover="playclip();" type="button" value="A5" class="coord">A5</button></td>
         <td class="grid"><button onmouseover="playclip();" type="button" value="A6" class="coord">A6</button></td>
@@ -190,6 +190,10 @@
   </div>
 
   </main>
+  
+  <div>
+    <img src="/assets/jet.png" alt="Jet" id="jet">
+  </div>
   
   <div id="divGrid2">
   <table id="layoutGrid">
@@ -439,14 +443,17 @@
   <audio controls autoplay loop class="backgroundMusic">
       <source src="/assets/sinbadTheme.mp3" type="audio/mp3">
   </audio>
-  <audio controls autoplay loop class="backgroundMusic">
-      <source src="/assets/oceanSounds2.mp3" type="audio/mp3">
-  </audio>
   <audio>
     <source src="/assets/grid.mp3">
   </audio>
   <audio>
     <source src="/assets/target.mp3">
+  </audio>
+  <audio>
+    <source src="/assets/jetSound.mp3">
+  </audio>
+    <audio controls autoplay loop class="backgroundMusic">
+      <source src="/assets/oceanSounds2.mp3" type="audio/mp3">
   </audio>
 
 

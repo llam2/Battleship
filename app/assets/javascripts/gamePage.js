@@ -1,8 +1,10 @@
 window.onload = function() {
 	var audio = document.getElementsByTagName("audio")[1];
 	var audio2 = document.getElementsByTagName("audio")[2];
-	audio.volume = .5;
-	audio2.volume = .5;
+	var audio3 = document.getElementsByTagName("audio")[3];
+	audio.volume = .3;
+	audio2.volume = .3;
+	audio3.volume = .8;
 };
 
 
@@ -24,6 +26,20 @@ function shipSubmit() {
 	audio.play();
 	var show = document.getElementsByTagName("main")[0];
 	show.style.display = "block";
+}
+
+function flyPlane() {
+	var plane = document.getElementById("jet");
+	plane.style.display = "block";
+	plane.style.animationName = "fly";
+	var audio = document.getElementsByTagName("audio")[3]
+	setTimeout(function() { audio.play(); }, 500);
+	setTimeout(function() { byePlane(); }, 2000);
+}
+
+function byePlane() {
+	var plane = document.getElementById("jet");
+	plane.style.display = "none";	
 }
 
 function validate() {
