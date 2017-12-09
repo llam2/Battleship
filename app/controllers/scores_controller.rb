@@ -10,8 +10,9 @@ class ScoresController < ApplicationController
     end
     
     def create
-        @score = Score.all
-    end
+    @score.new(params.require(:scores).permit(:score))
+    @score.save
+end
     
      def edit
         @score =  Ship.find(params[:id])

@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :players
   resources :scores
   
+  post 'scores/create' => 'scores#create'
   
   
 

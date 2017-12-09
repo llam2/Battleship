@@ -67,7 +67,7 @@ function scores() {
 	b.style.display = "none";
 	var start = document.getElementById("nameForm");
 	start.style.display = "none";
-	audio.play();
+	audio.play(); //282.10.45.124
 
 };
 
