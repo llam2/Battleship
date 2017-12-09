@@ -120,10 +120,7 @@ function validate() {
 	for(var i = 0; i < 7; i++)
 		{
 			if(letterChar[i] == 'A' || letterChar[i] == 'a')
-			{
 				letter[i] = 0;
-				//alert("OI");
-			}
 			else if(letterChar[i] == 'B' || letterChar[i] == 'b')
 				letter[i] = 1;
 			else if(letterChar[i] == 'C' || letterChar[i] == 'c')
@@ -142,19 +139,27 @@ function validate() {
 				letter[i] = 8;
 			else if(letterChar[i] == 'J' || letterChar[i] == 'j')
 				letter[i] = 9;
-			else
-			{
-			//	alert("Invalid letter input!");
-			}
+			
 		}
 		
 
 		
 	
 	var x = createGridArray();
-	
-	for (var i = 0; i < 10; i++)
-		for (var j = 0; j < 10; j++)
+	var msg = "";
+		
+		for(var i = 0; i < 10; i++)
+		{
+			for(var j = 0; j < 10; j++)
+			{
+				msg+= x[i][j] + " ";
+			}
+			msg+="\n";
+		}
+		
+		alert(msg);
+	var j = 0;
+	for (var i = 0; i < 7; i++)
 		{
 			if(j == 0 && i == 0)
 			              {
@@ -176,7 +181,23 @@ function validate() {
 							}
 						}
 			
+			j++;
 		}
+		
+		var msg = "";
+		
+		for(var i = 0; i < 10; i++)
+		{
+			for(var j = 0; j < 10; j++)
+			{
+				msg+= x[i][j] + " ";
+			}
+			msg+="\n";
+		}
+		
+		alert(msg);
+		
+		
 	
 	
 	
