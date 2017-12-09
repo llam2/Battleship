@@ -1,7 +1,8 @@
 *{
-	font-family: Perpetua;
+	font-family: Monospace;
 }
 
+html, body {margin: 0; height: 100%; overflow: hidden}
 
 table 
 {
@@ -205,7 +206,17 @@ aside{
 
 #turn
 {
-	float: left;
+	background-color: #b3e6ff;
+	background: rgba(179, 230, 255, 0.7);
+	background-position: center;
+	width: 200px;
+	height: 200px;
+	display: none;
+	padding-top: 10px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
 
 audio
@@ -213,11 +224,15 @@ audio
 	display: none;
 }
 
-.imgBorder
+#imgBorder
 {
 	border-style: solid;
-    border-color: black;
-    border-width: 2px;
+  border-color: black;
+  border-width: 2px;
+  width:100px; 
+  height:100px;
+  display: block;
+	margin: auto;
 }
 
 #wholeGrid
@@ -251,6 +266,14 @@ h1
 {
 	font-weight: bold;
 	font-size: 48px;
+	text-align: center;
+	user-select: none;
+}
+
+h2
+{
+	font-weight: bold;
+	font-size: 20px;
 	text-align: center;
 	user-select: none;
 }
@@ -467,7 +490,7 @@ form ul li {
 
 }
 
-#jet {
+#jet, #jet2{
 	display: none;
 	animation-fill-mode: forwards;
 	animation-duration: 1s;
@@ -484,7 +507,15 @@ form ul li {
 	}
 	100%{
     	transform: translate(-100%, -250%) scale(3, 3);
-    	display: none;
+	}
+}
+
+@keyframes fly2{
+	0%{
+		transform: translate(100%, -70%) translateZ(0) scale(.5, .5);
+	}
+	100%{
+    	transform: translate(700%, -250%) scale(3, 3);
 	}
 }
 
