@@ -22,11 +22,28 @@ header
 	z-index: -1;
 }
 
+.grid3{
+	outline: solid 1.5px aqua;
+	text-align: center;
+	width: 42px;
+	height: 42px;
+	border: 0;
+ 	box-shadow:none;
+ 	border-radius: 0px;
+ 	background: #5B86E5;
+}
+
 #layoutGrid 
 {
 	border-collapse: collapse;
 	width: 450px;
 	height: 420px;
+}
+
+#table3{
+	border-collapse: collapse;
+	width: 450px;
+	height: 420px;	
 }
 
 .grid2
@@ -59,6 +76,15 @@ header
  	background: linear-gradient(to bottom right, #36D1DC, #5B86E5);
 }
 
+.coord2
+{
+	width: 42px;
+	height: 42px;
+	border: 0;
+ 	box-shadow:none;
+ 	border-radius: 0px;
+ 	background: linear-gradient(to bottom right, #36D1DC, #5B86E5);
+}
 .ycoord
 {
 	font-weight: bold;
@@ -108,8 +134,7 @@ main {
 	height: 490px;
 	display: none;
 	padding-top: 10px;
-	margin-left:auto; 
-	margin-right:auto;
+	margin-left: 810px;
 	margin-top: 116.5px;
  	animation-fill-mode: forwards;
 	animation-duration: 1s;
@@ -129,11 +154,11 @@ main {
 #shipWindow{
 	background-color: #b3e6ff;
 	background: rgba(179, 230, 255, 0.7);
-	width: 710px;
+	width: 740px;
 	height: 500px;
 	position: absolute;
 	left: 43%;
-	top: 20%;
+	top: 21.5%;
 }
 
 #nameForm{
@@ -198,6 +223,21 @@ audio
 #wholeGrid
 {
 	display: none;
+}
+
+#wholeGrid2
+{
+	display: none;
+	padding-top: 10px;
+	margin-left: 30px;
+	margin-top: 116.5px;
+	position: absolute;
+	background-color: #b3e6ff;
+	background: rgba(179, 230, 255, 0.7);
+	background-position: center;
+	width: 500px;
+	height: 490px;
+	top: 4%;
 }
 
 label
@@ -374,7 +414,7 @@ form ul li {
 	width:425px; 
 	height:100px;
 	position: absolute;
-  	top: 30%;
+  	top: 33%;
     left: 50%;
     transform: translate(-50%, -210%);
 	backface-visibility: hidden;
@@ -435,6 +475,7 @@ form ul li {
 	animation-delay: 1s;
 	position: absolute;
 	left: -50%;
+	z-index: 1;
 }
 
 @keyframes fly{

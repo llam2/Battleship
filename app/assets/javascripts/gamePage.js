@@ -23,6 +23,8 @@ function shipSubmit() {
 	var audio = document.getElementsByTagName("audio")[2];
 	var x = document.getElementById("wholeGrid");
 	x.style.display = "block";
+	var y = document.getElementById("wholeGrid2");
+	y.style.display = "block";
 	audio.play();
 	var show = document.getElementsByTagName("main")[0];
 	show.style.display = "block";
