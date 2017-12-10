@@ -28,41 +28,7 @@
 		<br>
 
 	<main>
-
-	<div id="options">
-		<h1>Options</h1>
-		<form action="/action_page.php" method="get" id="optionsBox">
-			<input type="checkbox" id="fruit1" name="fruit-1" value="Apple">
-  			<input type="checkbox" id="Music" value="Music" onchange="musicToggle(this);">
-			<label for="Music">Turn off Music<br></label>
-			<input type="checkbox" id="SoundFX" value="SoundFX" onchange="soundFXToggle(this);">
-  			<label for="SoundFX">Turn off SoundFX<br></label>
-		</form>
-	</div>
-
-	<div id="scores">
-		<h1>Leaderboard</h1>
-	</div>
-
-	<div id="shipWindow">
-			<button type="button" onmouseover="playclip();" onclick="shipSubmit();" id="shipSubmit">Submit</button>
-	</div>
-
-
-  <div id="nameForm">
-      <h1>Enter a name:</h1><br>
-      <%= link_to 'New Player', new_player_path %>
-      <form method="post" action="gamePage.html" onsubmit="return nameBox()" value="gamePage.html">
-      <fieldset>
-      <label><input type="text" id="fname" name="fname"><br></label>
-      <input type="submit" value="Submit">
-      </fieldset>
-      </form>
-  </div>
-  
-
-
-
+		
 	<audio controls autoplay loop id="backgroundMusic">
   		<source src="/assets/startTheme.mp3" type="audio/mp3">
 	</audio>
@@ -73,7 +39,6 @@
 		<source src="/assets/target.mp3">
 	</audio>
 
-
 	</main>
 
 <div id="start">
@@ -82,10 +47,22 @@
   </div>
 
   <div id="otherButtons">
-      <button type="button" id="optionsButton">Options</button>
-      <%= link_to 'Start', scores_url, id: "scoresButton", onmouseover: "playclip()" %>
+      <button type="button" id="optionsButton" onclick="options();">Options</button>
+      <%= link_to 'Start', scores_url, id: "scoresButton", onmouseover: "playclip();" %>
       <button type="button" id="scoresButton">Scores</button>
   </div>
+  
+  	<div id="options">
+		<h1>Options</h1>
+		<form action="/action_page.php" method="get" id="optionsBox">
+  			<input type="checkbox" id="Music" value="Music" onchange="musicToggle(this);">
+			<label for="Music">Turn off Music<br></label>
+			<input type="checkbox" id="SoundFX" value="SoundFX" onchange="soundFXToggle(this);">
+  			<label for="SoundFX">Turn off SoundFX<br></label>
+		</form>
+		 <button type="button" onclick="hideOptions();createCookie();">Okay</button>
+	</div>
+
 
 	<aside id="turn">
 		<img src="/assets/yourTurn.gif" alt="Monkey" class="imgBorder" style="position:absolute; top:250px; left:150px; width:100px; height:100px;">

@@ -55,7 +55,7 @@
         <td class="grid"><button onmouseover="playclip();" onclick="aiTurn();" type="button" value="A4" class="coord">&nbsp</button></td>
         <td class="grid"><button onmouseover="playclip();" onclick="yourTurn();" type="button" value="A5" class="coord">&nbsp</button></td>
         <td class="grid"><button onmouseover="playclip();" onclick="flyPlane2();" type="button" value="A6" class="coord">&nbsp</button></td>
-        <td class="grid"><button onmouseover="playclip();" type="button" value="A7" class="coord">&nbsp</button></td>
+        <td class="grid"><button onmouseover="playclip();" type="button" value="A7" onclick="submitBoxValue(value)" class="coord">&nbsp</button></td>
         <td class="grid"><button onmouseover="playclip();" type="button" value="A8" class="coord">&nbsp</button></td>
         <td class="grid"><button onmouseover="playclip();" type="button" value="A9" class="coord">&nbsp</button></td>
       </tr>
@@ -287,72 +287,72 @@
 
       <tr>
         <td class="ycoord">F</td>
-        <td class="grid3">&nbsp</td>
-        <td class="grid3">&nbsp</td>
-        <td class="grid3">&nbsp</td>
-        <td class="grid3">&nbsp</td>
-        <td class="grid3">&nbsp</td>
-        <td class="grid3">&nbsp</td>
-        <td class="grid3">&nbsp</td>
-        <td class="grid3">&nbsp</td>
-        <td class="grid3">&nbsp</td>
-        <td class="grid3">&nbsp</td>
+        <td class="grid3" id="box50">&nbsp</td>
+        <td class="grid3" id="box51">&nbsp</td>
+        <td class="grid3" id="box52">&nbsp</td>
+        <td class="grid3" id="box53">&nbsp</td>
+        <td class="grid3" id="box54">&nbsp</td>
+        <td class="grid3" id="box55">&nbsp</td>
+        <td class="grid3" id="box56">&nbsp</td>
+        <td class="grid3" id="box57">&nbsp</td>
+        <td class="grid3" id="box58">&nbsp</td>
+        <td class="grid3" id="box59">&nbsp</td>
       </tr>
 
       <tr>
         <td class="ycoord">G</td>
-        <td class="grid3">&nbsp</td>
-        <td class="grid3">&nbsp</td>
-        <td class="grid3">&nbsp</td>
-        <td class="grid3">&nbsp</td>
-        <td class="grid3">&nbsp</td>
-        <td class="grid3">&nbsp</td>
-        <td class="grid3">&nbsp</td>
-        <td class="grid3">&nbsp</td>
-        <td class="grid3">&nbsp</td>
-        <td class="grid3">&nbsp</td>
+        <td class="grid3" id="box60">&nbsp</td>
+        <td class="grid3" id="box61">&nbsp</td>
+        <td class="grid3" id="box62">&nbsp</td>
+        <td class="grid3" id="box63">&nbsp</td>
+        <td class="grid3" id="box64">&nbsp</td>
+        <td class="grid3" id="box65">&nbsp</td>
+        <td class="grid3" id="box66">&nbsp</td>
+        <td class="grid3" id="box67">&nbsp</td>
+        <td class="grid3" id="box68">&nbsp</td>
+        <td class="grid3" id="box69">&nbsp</td>
       </tr>
 
       <tr>
         <td class="ycoord">H</td>
-        <td class="grid3">&nbsp</td>
-        <td class="grid3">&nbsp</td>
-        <td class="grid3">&nbsp</td>
-        <td class="grid3">&nbsp</td>
-        <td class="grid3">&nbsp</td>
-        <td class="grid3">&nbsp</td>
-        <td class="grid3">&nbsp</td>
-        <td class="grid3">&nbsp</td>
-        <td class="grid3">&nbsp</td>
-        <td class="grid3">&nbsp</td>
+        <td class="grid3" id="box70">&nbsp</td>
+        <td class="grid3" id="box71">&nbsp</td>
+        <td class="grid3" id="box72">&nbsp</td>
+        <td class="grid3" id="box73">&nbsp</td>
+        <td class="grid3" id="box74">&nbsp</td>
+        <td class="grid3" id="box75">&nbsp</td>
+        <td class="grid3" id="box76">&nbsp</td>
+        <td class="grid3" id="box77">&nbsp</td>
+        <td class="grid3" id="box78">&nbsp</td>
+        <td class="grid3" id="box79">&nbsp</td>
       </tr>
 
        <tr>
         <td class="ycoord">I</td>
-        <td class="grid3">&nbsp</td>
-        <td class="grid3">&nbsp</td>
-        <td class="grid3">&nbsp</td>
-        <td class="grid3">&nbsp</td>
-        <td class="grid3">&nbsp</td>
-        <td class="grid3">&nbsp</td>
-        <td class="grid3">&nbsp</td>
-        <td class="grid3">&nbsp</td>
-        <td class="grid3">&nbsp</td>
-        <td class="grid3">&nbsp</td>
+        <td class="grid3" id="box80">&nbsp</td>
+        <td class="grid3" id="box81">&nbsp</td>
+        <td class="grid3" id="box82">&nbsp</td>
+        <td class="grid3" id="box83">&nbsp</td>
+        <td class="grid3" id="box84">&nbsp</td>
+        <td class="grid3" id="box85">&nbsp</td>
+        <td class="grid3" id="box86">&nbsp</td>
+        <td class="grid3" id="box87">&nbsp</td>
+        <td class="grid3" id="box88">&nbsp</td>
+        <td class="grid3" id="box89">&nbsp</td>
       </tr>
 
       <tr>
         <td class="ycoord">J</td>
-        <td class="grid3">&nbsp</td>
-        <td class="grid3">&nbsp</td>
-        <td class="grid3">&nbsp</td>
-        <td class="grid3">&nbsp</td>
-        <td class="grid3">&nbsp</td>
-        <td class="grid3">&nbsp</td>
-        <td class="grid3">&nbsp</td>
-        <td class="grid3">&nbsp</td>
-        <td class="grid3">&nbsp</td>
-        <td class="grid3">&nbsp</td>
+        <td class="grid3" id="box90">&nbsp</td>
+        <td class="grid3" id="box91">&nbsp</td>
+        <td class="grid3" id="box92">&nbsp</td>
+        <td class="grid3" id="box93">&nbsp</td>
+        <td class="grid3" id="box94">&nbsp</td>
+        <td class="grid3" id="box95">&nbsp</td>
+        <td class="grid3" id="box96">&nbsp</td>
+        <td class="grid3" id="box97">&nbsp</td>
+        <td class="grid3" id="box98">&nbsp</td>
+        <td class="grid3" id="box99">&nbsp</td>
       </tr>
 
   </table>

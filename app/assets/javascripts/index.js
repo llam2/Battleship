@@ -1,11 +1,28 @@
 window.onload = function() {
 	var audio = document.getElementsByTagName("audio")[1];
 	var audio2 = document.getElementsByTagName("audio")[2];
-	audio.volume = .3;
-	audio2.volume = .3;
+	audio.volume = .5;
+	audio2.volume = .5;
 	slide();
+	if (document.cookie.length != 0) {
+		var audio = document.getElementsByTagName("audio")[1].volume;
+		var audio2 = document.getElementsByTagName("audio")[2].volume;
+		var backgroundM = document.getElementById("backgroundMusic").volume;
+		var nameValueArray = document.cookie.split("=");
+		
+		audio.volume = nameValueArray[1];
+		audio2.volume = nameValueArray[3];
+		backgroundM.volume = nameValueArray[5];
+	}
 };
 
+function createCookie(){
+	var audio = document.getElementsByTagName("audio")[1].volume;
+	var audio2 = document.getElementsByTagName("audio")[2].volume;
+	var backgroundM = document.getElementById("backgroundMusic").volume;
+	
+	document.cookie = "audio=" + audio + ";audio2=" + audio2 + ";backgroundM=" + backgroundM + ";expires=Fri, 5 Aug 2020 01:00:00 UTC;";
+}
 
 function playclip() {
 
@@ -36,20 +53,25 @@ function onePlayer() {
 function options() {
 
 	var audio = document.getElementsByTagName("audio")[2];
-	var x = document.getElementById("wholeGrid");
-	x.style.display = "none";
-	var z = document.getElementById("scores");
-	z.style.display = "none";
-	var a = document.getElementById("shipWindow");
-	a.style.display = "none";
-	var b = document.getElementById("divGrid2");
-	b.style.display = "none";
 	var y = document.getElementById("options");
-	y.style.display = "block";
-	var start = document.getElementById("nameForm");
+	var titleClass = document.getElementsByClassName("title")[0];
+	var start = document.getElementById("start");
 	start.style.display = "none";
+	y.style.display = "block";
+	titleClass.style.display = "none";
 	audio.play();
+};
 
+function hideOptions() {
+
+	var audio = document.getElementsByTagName("audio")[2];
+	var y = document.getElementById("options");
+	var titleClass = document.getElementsByClassName("title")[0];
+	var start = document.getElementById("start");
+	start.style.display = "block";
+	titleClass.style.display = "block";
+	y.style.display = "none";
+	audio.play();
 };
 
 function scores() {
@@ -116,39 +138,8 @@ function start() {
 	var show = document.getElementsByTagName("main")[0];
 	show.style.display = "block";
 
-	/*
-
-	var navClass1 = document.getElementsByClassName("navigation")[0];
-	navClass1.style.animationName = "fadeIn";
-
-	var navClass2 = document.getElementsByClassName("navigation")[1];
-	navClass2.style.animationName = "fadeIn"
-
-	var navClass3 = document.getElementsByClassName("navigation")[2];
-	navClass3.style.animationName = "fadeIn"
-*/
 	var mainTag = document.getElementsByTagName("main")[0];
 	mainTag.style.animationName = "fadeIn";
-/*
-	var button1 = document.getElementsByClassName("navigation")[0];
-	button1.style.display = "inline-block";
-
-	var button2 = document.getElementsByClassName("navigation")[1];
-	button2.style.display = "inline-block";
-
-	var button3 = document.getElementsByClassName("navigation")[2];
-	button3.style.display = "inline-block";
-
-	var start = document.getElementById("start");
-	start.style.display = "none";
-
-	var start = document.getElementById("nameForm");
-	start.style.display = "block";
-
-
-	var titleClass = document.getElementsByClassName("title")[0];
-	titleClass.style.animationName = "shrink";
-	*/
 };
 
 function slide() {

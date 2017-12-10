@@ -32,6 +32,11 @@ function shipSubmit() {
 	show.style.display = "block";
 }
 
+function submitBoxValue(value)
+{
+	alert(value);
+}
+
 function flyPlane() {
 	var plane = document.getElementById("jet");
 	plane.style.display = "block";
