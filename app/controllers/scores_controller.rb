@@ -1,11 +1,14 @@
 class ScoresController < ApplicationController
 
+     def index
+        @scores = Score.all
+    end
     
     def new
     @score = Scores.new
     end
 
- def show
+    def show
         @score = Score.find(params[:id])
     end
     

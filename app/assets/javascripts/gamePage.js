@@ -250,3 +250,198 @@ else
 //-----------------------
 }
 
+function addPlayerShipsToBattlefield()
+{
+	
+}
+
+function generateBotShips()
+{
+	var x = createGridArray();
+	var letterC = [0,0,0,0,0,0,0];
+	var numberC = [0,0,0,0,0,0,0];
+	var direction = [0,0,0,0,0,0,0];
+	var i;
+	var size;
+			for(i = 0; i < 7; i++)
+			{
+				alert("iteration" + (i+1));
+				generateCoords(letterC, numberC, i, x, direction);
+			}
+			
+}
+
+function generateCoords(letterC, numberC, i, x, direction)
+{
+  
+		var size = 0;
+		
+		if(i == 0)
+			size = 5;
+		else if (i == 1 || i == 2)
+			size = 4;
+		else if (i == 3 || i == 4)
+			size = 3;
+		else if (i == 5 || i == 6)
+			size = 2;
+		
+		
+			letterC[i] = Math.floor((Math.random() * 9) + 0);
+			numberC[i] = Math.floor((Math.random() * 9) + 0);
+			direction[i] = Math.floor((Math.random() * 2) + 1);
+		    
+		    alert(letterC[i] + " " + numberC[i] + " " + direction[i] + " " + i);	
+			//1 is vertical and 2 is horizontal
+			
+			if(i==0)
+			{
+				if(direction[i] == 1)
+				{
+					
+					for(var s = 2; s <= 5; s++)
+	
+					{
+						if((letterC[i]+s-1)<=9)
+						{
+							for(var j = 1; j < s; j++)
+								x[letterC[i]+j][numberC[i]] = 1;
+						}
+						else
+						{
+							//does not fit in grid
+							generateCoords(letterC, numberC, i, x, direction);
+						}
+					}
+				}
+				
+				else //if(direction[i] == 2)
+				{
+					alert("loopingsdas for direction 2");
+					
+						for( s = 2; s <= 5; s++)					
+						{
+							alert("inside if");
+						if(numberC[i]-s-l>= 0)
+						{ 
+							alert("inside if");
+							for(var j = 1; j <= s; j++)
+							{
+							alert("looping for direction 2");
+								x[letterC[i]][numberC[i]-j] = 1;
+							}
+						}
+						else
+						{
+							//does not fit in grid
+							alert("rip");
+							generateCoords(letterC, numberC, i, x, direction);
+						}
+						alert("loopingsdas for direction asdsad2");
+					    }
+				
+				}
+				
+			}
+			else
+			{
+		        
+		     if(x[numberC[i]][letterC[i]] == 0)
+		     {
+				if(direction[i] == 1)
+				{
+					for(var s = 2; s <= 5; s++)
+					{
+						if((letterC[i]+s-1)<=9)
+						{
+							for(var j = 1; j < s; j++)
+							{
+								if(x[letterC[i]+j][numberC[i]] == 0)
+								x[letterC[i]+j][numberC[i]] = 1;
+								else
+								generateCoords(letterC, numberC, i, x, direction);
+							}
+						}
+						else
+						{
+							//does not fit in grid
+							generateCoords(letterC, numberC, i, x, direction);
+						}
+					}
+				}
+			
+				
+				else //if(direction[i] == 2)
+				{
+					for(var s = 2; s <= 5; s++)
+					{
+						if((numberC[i]-s-l)>= 0)
+						{
+							alert("looping for direction 2");
+							for(var j = 1; j < s; j++)
+							{
+								if(x[letterC[i]][(numberC[i]-j)] == 0)
+								x[letterC[i]][(numberC[i]-j)] = 1;
+								else
+								{
+										alert("meh");
+								generateCoords(letterC, numberC, i, x, direction);
+								}
+							}
+						}
+						else
+						{
+							//does not fit in grid
+							generateCoords(letterC, numberC, i, x, direction);
+						}
+					}
+				
+				}
+			//	x[letterC[i]][numberC[i]] = 1;
+		     }
+		     else
+		    	generateCoords(letterC, numberC, i, x, direction);
+				
+			}
+			
+//TESTING BELOW		
+	var msg = "";
+		
+		for(var i = 0; i < 10; i++)
+		{
+			for(var j = 0; j < 10; j++)
+			{
+				msg+= x[i][j] + " ";
+			}
+			msg+="\n";
+		}
+		
+		alert(msg);
+		
+		var msg2 = "";
+		for(var i = 0; i < 7; i++)
+		{
+			msg2+= letterC[i] + " " + numberC[i] + "\n";
+		}
+	alert(msg2);
+}
+
+function test()
+{
+	
+	for(var s = 2; s <= 5; s++)
+		{
+				if(letterC[i+(s-1)]<=9)
+						{
+							for(var j = 1; j <= s; j++)
+								if(x[letterC[i+(s-1)]][numberC[i]] == 0)
+								x[letterC[i+(s-1)]][numberC[i]] = 1;
+								else
+								generateCoords(letterC, numberC, i, x, direction);
+						}
+						else
+						{
+							//does not fit in grid
+							generateCoords(letterC, numberC, i, x, direction);
+						}
+		}
+}
