@@ -40,6 +40,8 @@ function submitBoxValue(value)
 	alert(value);
 }
 
+
+
 function flyPlane() {
 	var plane = document.getElementById("jet");
 	plane.style.display = "block";
@@ -112,9 +114,11 @@ function putShipsOnPage()
 
 function turnBoxBlack(boxID)
 {
-	
-	
+	var box = document.getElementById(boxID);
+	alert("works");
+	box.style.backgroundColor="Brown";
 }
+
 function validate() {
 	
 	
