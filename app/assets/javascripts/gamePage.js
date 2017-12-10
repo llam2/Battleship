@@ -1,5 +1,8 @@
-    var letterC = [4];
-	var numberC = [4];
+    var letterC;
+	var numberC;
+	var direction;
+	var score = 0;
+	
 
 window.onload = function() {
 	var audio = document.getElementsByTagName("audio")[1];
@@ -87,12 +90,14 @@ function yourTurn() {
 
 function putShipsOnPage()
 {
+
+//TEST
 	letterC = [0,0,5];
 	numberC = [0,9,9];
 	direction = [1,2,1];
+//TEST
 	var size = 0;
-			
-	for(int i = 0; i < 7; i++)
+	for(var i = 0; i < 7; i++)
 	{
 		if(i == 0)
 			size = 5;
@@ -105,11 +110,18 @@ function putShipsOnPage()
 		for(var j = 0; j < size; j++)
 		{
 		   if(direction[i] == 1)
-		   turnsBoxBlack("box" + (letterC[i]+j) + numberC[i]);
+		   {
+		   	var s = "box" + (letterC[i]+j) + numberC[i];
+		   turnBoxBlack(s);
+		   }
 		   else if(direction[i] == 2)
-		   turnsBoxBlack("box" + (letterC[i]) + (numberC[i]-j));
+		   {
+		   	var s = "box" + (letterC[i]) + (numberC[i]-j)
+		   turnBoxBlack(s);
+		   }
 		}
 	}
+	
 }
 
 function turnBoxBlack(boxID)
