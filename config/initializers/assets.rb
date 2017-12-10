@@ -14,6 +14,8 @@ Rails.application.config.assets.precompile += %w( gamePage.css )
 Rails.application.config.assets.precompile += %w( gamePage.js )
 Rails.application.config.assets.precompile += %w( newPlayer.css )
 Rails.application.config.assets.precompile += %w( newPlayer.js )
+Rails.application.config.assets.precompile += %w( scores.css )
+Rails.application.config.assets.precompile += %w( scores.js )
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in the app/assets
 # folder are already added.
