@@ -25,6 +25,8 @@ function shipSubmit() {
 	x.style.display = "block";
 	var y = document.getElementById("wholeGrid2");
 	y.style.display = "block";
+	var z = document.getElementById("turn");
+	z.style.display = "block";
 	audio.play();
 	var show = document.getElementsByTagName("main")[0];
 	show.style.display = "block";
@@ -39,9 +41,38 @@ function flyPlane() {
 	setTimeout(function() { byePlane(); }, 2000);
 }
 
+function flyPlane2() {
+	var plane = document.getElementById("jet2");
+	plane.style.display = "block";
+	plane.style.animationName = "fly2";
+	var audio = document.getElementsByTagName("audio")[3]
+	setTimeout(function() { audio.play(); }, 500);
+	setTimeout(function() { byePlane(); }, 2000);
+}
+
 function byePlane() {
 	var plane = document.getElementById("jet");
-	plane.style.display = "none";	
+	plane.style.display = "none";
+	var plane2 = document.getElementById("jet2");
+	plane2.style.display = "none";
+}
+
+function aiTurn() {
+	var image = document.getElementById("imgBorder");
+	image.src="/assets/theirTurn.jpg";
+	
+	var text = document.getElementById("turnText");
+	text.textContent="AI's Turn";
+	text.style.color="red";
+}
+
+function yourTurn() {
+	var image = document.getElementById("imgBorder");
+	image.src="/assets/yourTurn.gif";
+	
+	var text = document.getElementById("turnText");
+	text.textContent="Your Turn";
+	text.style.color="black";
 }
 
 function validate() {

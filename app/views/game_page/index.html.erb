@@ -52,9 +52,9 @@
         <td class="grid"><button type="button" id="smoke" class="coord">&nbsp</button></td>
         <td class="grid"><button type="button" id="explode" class="coord">&nbsp</button></td>
         <td class="grid"><button onmouseover="playclip();" onclick="flyPlane();" type="button" value="A3" class="coord">&nbsp</button></td>
-        <td class="grid"><button onmouseover="playclip();" type="button" value="A4" class="coord">&nbsp</button></td>
-        <td class="grid"><button onmouseover="playclip();" type="button" value="A5" class="coord">&nbsp</button></td>
-        <td class="grid"><button onmouseover="playclip();" type="button" value="A6" class="coord">&nbsp</button></td>
+        <td class="grid"><button onmouseover="playclip();" onclick="aiTurn();" type="button" value="A4" class="coord">&nbsp</button></td>
+        <td class="grid"><button onmouseover="playclip();" onclick="yourTurn();" type="button" value="A5" class="coord">&nbsp</button></td>
+        <td class="grid"><button onmouseover="playclip();" onclick="flyPlane2();" type="button" value="A6" class="coord">&nbsp</button></td>
         <td class="grid"><button onmouseover="playclip();" type="button" value="A7" class="coord">&nbsp</button></td>
         <td class="grid"><button onmouseover="playclip();" type="button" value="A8" class="coord">&nbsp</button></td>
         <td class="grid"><button onmouseover="playclip();" type="button" value="A9" class="coord">&nbsp</button></td>
@@ -189,8 +189,12 @@
   </table>
   </div>
   
-    <div>
+  <div>
     <img src="/assets/jet.png" alt="Jet" id="jet">
+  </div>
+  
+  <div>
+    <img src="/assets/jet2.png" alt="Jet2" id="jet2">
   </div>
 
   </main>
@@ -616,14 +620,13 @@
       <source src="/assets/oceanSounds2.mp3" type="audio/mp3">
   </audio>
 
+<div id="turn">
+  <h2 id="turnText">Your Turn</h2><br>
+  <img src="/assets/yourTurn.gif" alt="Monkey" id="imgBorder">
+</div>
 
   </main>
 
-
-  <aside id="turn">
-    <img src="/assets/yourTurn.gif" alt="Monkey" class="imgBorder" style="position:absolute; top:250px; left:150px; width:100px; height:100px;">
-    <img src="/assets/theirTurn.jpg" alt="Monkey" class="imgBorder" style="position:absolute; top:450px; left:150px; width:100px; height:100px;">
-  </aside>
 
     <footer>
       

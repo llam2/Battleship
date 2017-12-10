@@ -1,19 +1,26 @@
-<h2>Enter a Username and Password</h2>
 
+<body>
+  <header>
+      <img src="/assets/Title.png" alt="Title" class="title">
+    </header>
+
+<main>
+    <h1>Enter a Username and Password</h1>
 <%= form_for @player do |f| %>
+
   <p>
-    <%= f.label :userName %><br>
-    <%= f.text_field :userName %>
+    <%= f.label :userName %> <span id="text"><%= f.label :password %></span>
+    <br>
+    <%= f.text_field :userName %> <span id="box"><%= f.text_field :password %></span>
   </p>
- 
-  <p>
-    <%= f.label :password %><br>
-    <%= f.text_field :password %>
-  </p>
- 
-  <p>
+
+  <div id="submitButton">
     <%= f.submit %>
-  </p>
+  </div>
+
 <% end %>
+</main>
+
+</body>
 
 <%= link_to 'Back', root_path %>
