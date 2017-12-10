@@ -1,3 +1,6 @@
+    var letterC = [4];
+	var numberC = [4];
+
 window.onload = function() {
 	var audio = document.getElementsByTagName("audio")[1];
 	var audio2 = document.getElementsByTagName("audio")[2];
@@ -75,6 +78,16 @@ function yourTurn() {
 	text.style.color="black";
 }
 
+function putShipsOnPage()
+{
+	turnsBoxBlack("box00");
+}
+
+function turnBoxBlack(boxID)
+{
+	
+	
+}
 function validate() {
 	
 	
@@ -289,8 +302,8 @@ function addPlayerShipsToBattlefield()
 function generateBotShips()
 {
 	var x = createGridArray();
-	var letterC = [0,0,0,0,0,0,0];
-	var numberC = [0,0,0,0,0,0,0];
+	 letterC = [0,0,0,0,0,0,0];
+     numberC = [0,0,0,0,0,0,0];
 	var direction = [0,0,0,0,0,0,0];
 	var i;
 	var size;
