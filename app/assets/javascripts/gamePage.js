@@ -85,7 +85,29 @@ function yourTurn() {
 
 function putShipsOnPage()
 {
-	turnsBoxBlack("box00");
+	letterC = [0,0,5];
+	numberC = [0,9,9];
+	direction = [1,2,1];
+	var size = 0;
+			
+	for(int i = 0; i < 7; i++)
+	{
+		if(i == 0)
+			size = 5;
+		else if (i == 1 || i == 2)
+			size = 4;
+		else if (i == 3 || i == 4)
+			size = 3;
+		else if (i == 5 || i == 6)
+			size = 2;
+		for(var j = 0; j < size; j++)
+		{
+		   if(direction[i] == 1)
+		   turnsBoxBlack("box" + (letterC[i]+j) + numberC[i]);
+		   else if(direction[i] == 2)
+		   turnsBoxBlack("box" + (letterC[i]) + (numberC[i]-j));
+		}
+	}
 }
 
 function turnBoxBlack(boxID)
