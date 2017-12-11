@@ -5,8 +5,30 @@
 	var direction = [0,0,0,0,0,0,0];
 	var pdirection = [0,0,0,0,0,0,0];
 	var score = 0;
-	var playerGrid;
-	var botGrid;
+	var playerGrid = [
+  [0,0,0,0,0,0,0,0,0,0],
+  [0,0,0,0,0,0,0,0,0,0],
+  [0,0,0,0,0,0,0,0,0,0],
+  [0,0,0,0,0,0,0,0,0,0],
+  [0,0,0,0,0,0,0,0,0,0],
+  [0,0,0,0,0,0,0,0,0,0],
+  [0,0,0,0,0,0,0,0,0,0],
+  [0,0,0,0,0,0,0,0,0,0],
+  [0,0,0,0,0,0,0,0,0,0],
+  [0,0,0,0,0,0,0,0,0,0]
+];
+	var botGrid = [
+  [0,0,0,0,0,0,0,0,0,0],
+  [0,0,0,0,0,0,0,0,0,0],
+  [0,0,0,0,0,0,0,0,0,0],
+  [0,0,0,0,0,0,0,0,0,0],
+  [0,0,0,0,0,0,0,0,0,0],
+  [0,0,0,0,0,0,0,0,0,0],
+  [0,0,0,0,0,0,0,0,0,0],
+  [0,0,0,0,0,0,0,0,0,0],
+  [0,0,0,0,0,0,0,0,0,0],
+  [0,0,0,0,0,0,0,0,0,0]
+];
 
 window.onload = function() {
 	var audio = document.getElementsByTagName("audio")[1];
@@ -51,6 +73,49 @@ function getPlayerGrid()
 {
 	return playerGrid;
 }
+
+function createPlayerGrid()
+{
+		
+	var size = 0;
+	for(var i = 0; i < 7; i++)
+	{
+		if(i == 0)
+			size = 5;
+		else if (i == 1 || i == 2)
+			size = 4;
+		else if (i == 3 || i == 4)
+			size = 3;
+		else if (i == 5 || i == 6)
+			size = 2;
+		for(var j = 0; j < size; j++)
+		{
+		   if(direction[i] == 1)
+		   {
+		   	playerGrid[letterC[i]+j][numberC[i]] = 1;
+		 
+		   }
+		   else if(direction[i] == 2)
+		   {
+		   	playerGrid[letterC[i]][numberC[i]-j] = 1;
+		   }
+		}
+	}
+	
+		var msg = "Player Grid:\n";
+		
+		for(var i = 0; i < 10; i++)
+		{
+			for(var j = 0; j < 10; j++)
+			{
+				msg+= playerGrid[i][j] + " ";
+			}
+			msg+="\n";
+		}
+		
+		alert(msg);
+}
+
 
 function getBotGrid()
 {
@@ -106,6 +171,7 @@ function putShipsOnPage()
 {
 	
 	addPlayerShipsToBattlefield();
+	createPlayerGrid();
 
 	
 }
