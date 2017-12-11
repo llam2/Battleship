@@ -167,6 +167,16 @@ function yourTurn() {
 	text.style.color="black";
 }
 
+function hideValidation()
+{
+	var validate = document.getElementById("shipValidate");
+	validate.style.display="none";
+	var form = document.getElementById("shipForm");
+	form.style.display="none";
+	var submit = document.getElementById("shipSubmit");
+	submit.style.display="block";
+}
+
 function putShipsOnPage()
 {
 	
@@ -530,6 +540,7 @@ function validate() {
 			pnumberC = number;
 			pdirection = direct;
 			//enable submit button
+			hideValidation();
 		}
 		else
 		{

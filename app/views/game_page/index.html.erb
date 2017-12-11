@@ -518,9 +518,10 @@
   </div>
   
   <div id="shipWindow">
+    <div id="shipForm">
     <h1>Enter Ship Coordinates:</h1>
     <p>Ship Size &nbsp;&nbsp;&nbsp; Coords &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Direction Facing</p>
-      <form>
+    <form>
         <!--Ship1-->
         <ul>
         <li><img src="/assets/Ship5.png" alt="Ship5" class="shipImage5"><br></li>
@@ -596,10 +597,11 @@
         <li><label><input type="radio" name="shipDirection" value="Horizontal" id="shipDirection7H">Horizontal (Facing East)<br></label></li>
         </ul>
       </form>
+      </div>
       <br>
       <button type="button" onmouseover="playclip();" onclick="shipSubmit();putShipsOnPage();" id="shipSubmit">Submit</button>
       <!--generateBotShips();-->
-      <button type="button" onmouseover="playclip();" onclick="validate();" id="shipSubmit">Validate</button>
+      <button type="button" onmouseover="playclip();" onclick="validate();" id="shipValidate">Validate</button>
   </div>
 
 
