@@ -1,8 +1,12 @@
-    var letterC;
-	var numberC;
-	var direction;
+    var letterC = [0,0,0,0,0,0,0];
+	var numberC = [0,0,0,0,0,0,0];
+	var pletterC = [0,0,0,0,0,0,0];
+	var pnumberC = [0,0,0,0,0,0,0];
+	var direction = [0,0,0,0,0,0,0];
+	var pdirection = [0,0,0,0,0,0,0];
 	var score = 0;
-	
+	var playerGrid;
+	var botGrid;
 
 window.onload = function() {
 	var audio = document.getElementsByTagName("audio")[1];
@@ -41,6 +45,16 @@ function shipSubmit() {
 function submitBoxValue(value)
 {
 	alert(value);
+}
+
+function getPlayerGrid()
+{
+	return playerGrid;
+}
+
+function getBotGrid()
+{
+	return botGrid();
 }
 
 
@@ -90,46 +104,178 @@ function yourTurn() {
 
 function putShipsOnPage()
 {
+	
+	addPlayerShipsToBattlefield();
 
-//TEST
-	letterC = [0,0,5];
-	numberC = [0,9,9];
-	direction = [1,2,1];
-//TEST
-	var size = 0;
-	for(var i = 0; i < 7; i++)
-	{
-		if(i == 0)
-			size = 5;
-		else if (i == 1 || i == 2)
-			size = 4;
-		else if (i == 3 || i == 4)
-			size = 3;
-		else if (i == 5 || i == 6)
-			size = 2;
-		for(var j = 0; j < size; j++)
-		{
-		   if(direction[i] == 1)
-		   {
-		   	var s = "box" + (letterC[i]+j) + numberC[i];
-		   turnBoxBlack(s);
-		   }
-		   else if(direction[i] == 2)
-		   {
-		   	var s = "box" + (letterC[i]) + (numberC[i]-j)
-		   turnBoxBlack(s);
-		   }
-		}
-	}
 	
 }
 
 function turnBoxBlack(boxID)
 {
 	var box = document.getElementById(boxID);
-	alert("works");
+	
 	box.style.backgroundColor="Brown";
 }
+
+function updatePageWhenPlayerHit(valueID)
+{
+	
+}
+
+function updatePageWhenPlayerMiss(valueID)
+{
+	
+}
+
+function updatePageWhenBotHit(valueID)
+{
+	
+}
+
+function updatePageWhenBotMiss(valueID)
+{
+	
+}
+
+function updateScoreWhenHit(valueID)
+{
+	score += 2000;
+}
+
+function updateScoreWhenMiss()
+{
+	score -= 1000;
+}
+function updateScoreWhenWin()
+{
+	score+=10000
+}
+
+function botTurn()
+{
+	var lCoord = Math.floor((Math.random() * 9) + 0);
+	var nCoord = Math.floor((Math.random() * 9) + 0);
+	
+	var player = getPlayerGrid();
+	
+	//0 = nothing just water, 1 = ship, 2 = ship already hit, -1 = water already missed
+	
+	if(player[lCoord][nCoord] == 0)
+	{
+		
+		
+		//code to get box to show water gif
+	}
+	else if(player[lCoord][nCoord] == -1)
+	{
+			
+		
+		//code to get box to show water gif
+		playerGrid[lCoord][nCoord] = -1;
+	}
+	else if(player[lCoord][nCoord] == 1)
+	{
+		
+		
+		//code to constantly display smoking gif
+		
+		playerGrid[lCoord][nCoord] = 2;
+	}
+		else if(player[lCoord][nCoord] == 2)
+	{
+	
+	}
+	
+	checkStatusOfGame();
+	//FUNCTION BELOW NEEDS TO BE IMPLEMENTED
+	changeTurn(true);
+	
+	
+}
+
+function playerTurn(lCoord, nCoord)
+{
+	
+	var bot = getBotGrid();
+	
+	//0 = nothing just water, 1 = ship, 2 = ship already hit, -1 = water already missed
+	
+	if(bot[lCoord][nCoord] == 0)
+	{
+		alert("It was a miss!");
+		
+		//code to get box to show water gif
+	}
+	else if(bot[lCoord][nCoord] == -1)
+	{
+			alert("It was a miss! You already tried this box -.-");
+		
+		//code to get box to show water gif
+		botGrid[lCoord][nCoord] = -1;
+	}
+	else if(bot[lCoord][nCoord] == 1)
+	{
+		alert("It was a hit!");
+		
+		//code to constantly display smoking gif
+		
+		botGrid[lCoord][nCoord] = 2;
+	}
+		else if(bot[lCoord][nCoord] == 2)
+	{
+		alert("You already damaged this part of the ship.... :L");
+	}
+	
+	checkStatusOfGame();
+	//FUNCTION BELOW NEEDS TO BE IMPLEMENTED
+	changeTurn(false);
+	
+}
+
+ function changeTurn(isTurn)
+ {
+ 	if(!isTurn)
+ 		botTurn();
+ 	else
+ 		{
+ 			//enable user to select a box.
+ 		}
+ }
+
+function endGame()
+{
+	//End Message
+	//submit playerId, Name and Score to db
+	//send score to rails
+	//redirect to leaderboard
+}
+
+	function checkStatusOfGame()
+	{
+		var numOfHitForPlayer = 0;
+		var numOfHitForBot = 0;
+		for(var i = 0; i < 10; i++)
+			for(var j = 0; j < 10; j++)
+				{
+					if(playerGrid[i][j] == 2)
+						numOfHitForBot++;
+					if(botGrid[i][j] == 2)
+					    numOfHitForPlayer++;
+					
+				}
+				
+			if(numOfHitForPlayer >= 23)
+			{
+				alert("You win!");
+			    endGame();
+			}
+			else if(numOfHitForBot >= 23)
+			{
+				alert("AI wins..... Ripperino");
+				endGame();
+			}
+	}
+			
 
 function validate() {
 	
@@ -170,6 +316,8 @@ function validate() {
 	var directionV = [direction1V, direction2V, direction3V, direction4V, direction5V, direction6V, direction7V];
 	var directionH = [direction1H, direction2H, direction3H, direction4H, direction5H, direction6H, direction7H];
 	
+	
+	
 
 	
 	
@@ -205,6 +353,28 @@ function validate() {
 		    }
 	}
 	
+	alert("fot tos etting directions");
+	//setting directions
+	var direct = [0,0,0,0,0,0,0];
+	for(var n = 0; n < 7; n++)
+	{
+		alert("in for loop");
+		if(directionV[n] == true)
+		{
+			alert("in if");
+			direct[n] = 1;
+			alert("after if");
+			
+		}
+		else 
+		{
+			alert("in else");
+			direct[n] = 2;
+			alert("in else after");
+		}
+	}
+	alert("finished setting directions");
+	
 	//IN DEVELOPMENT... FOR COLLISION VALIDATION
 	for(var i = 0; i < 7; i++)
 		{
@@ -237,41 +407,9 @@ function validate() {
 	var x = createGridArray();
 	var msg = "";
 		
-		for(var i = 0; i < 10; i++)
-		{
-			for(var j = 0; j < 10; j++)
-			{
-				msg+= x[i][j] + " ";
-			}
-			msg+="\n";
-		}
+		//collision validation
 		
-		alert(msg);
-	var j = 0;
-	for (var i = 0; i < 7; i++)
-		{
-			if(j == 0 && i == 0)
-			              {
-			              x[letter[i], number[j]] = 1;
-			             // alert(x[letter[i], number[j]])
-			              }
-					for (var p = 0; p < 10; p++)
-						for (var q = 0; q < 10; q++)
-						{
-						 
-							if(x[p][q] == 0)
-								if(p == letter[i] && q == number[i])
-								x[letter[i]][number[j]] = 1;
-							else
-							{
-								if(p == letter[i] && q == number[i])
-								alert("One or more of your ships are colliding! Please Fix!" );
-								
-							}
-						}
-			
-			j++;
-		}
+		
 		
 		var msg = "";
 		
@@ -286,10 +424,53 @@ function validate() {
 		
 		alert(msg);
 		
+		if(validation == true)
+		{
+			pletterC = letter;
+			pnumberC = number;
+			pdirection = direct;
+		}
+		else
+		{
+			//Failed vlidation code here
+		}
+		pletterC = letter;
+		pnumberC = number;
+		pdirection = direct;
+		
+		
+		
+		
 		
 	
 	
 	
+}
+
+function createBotGrid()
+{
+	var size = 0;
+	x = createGridArray();
+	for(var i = 0; i < 7; i++)
+	{
+		if(i == 0)
+			size = 5;
+		else if (i == 1 || i == 2)
+			size = 4;
+		else if (i == 3 || i == 4)
+			size = 3;
+		else if (i == 5 || i == 6)
+			size = 2;
+		for(var j = 0; j < size; j++)
+		{
+		   if(direction[i] == 1)
+		   	x[letterC[i]+j][numberC[i]] = 1;
+		   else if(direction[i] == 2)
+		   	x[letterC[i]][numberC[i]-j] = 1;
+		}
+	}
+	
+	return x;
 }
 
 function createGridArray()
@@ -325,7 +506,7 @@ document.getElementsByTagName('head')[0].appendChild(script);
     });
 
 	alert("suhh");
-    var score = 12345;
+   
 if (score){
     //Passing mdate and phone variables to rails controller(book_date & phone)
     window.open("localhost:3000//controller/create?scores="+score,"_self")
@@ -339,7 +520,36 @@ else
 
 function addPlayerShipsToBattlefield()
 {
-	
+	//TEST
+	letterC = pletterC;
+	numberC = pnumberC;
+	direction = pdirection;
+//TEST
+	var size = 0;
+	for(var i = 0; i < 7; i++)
+	{
+		if(i == 0)
+			size = 5;
+		else if (i == 1 || i == 2)
+			size = 4;
+		else if (i == 3 || i == 4)
+			size = 3;
+		else if (i == 5 || i == 6)
+			size = 2;
+		for(var j = 0; j < size; j++)
+		{
+		   if(direction[i] == 1)
+		   {
+		   	var s = "box" + (letterC[i]+j) + numberC[i];
+		   turnBoxBlack(s);
+		   }
+		   else if(direction[i] == 2)
+		   {
+		   	var s = "box" + (letterC[i]) + (numberC[i]-j)
+		   turnBoxBlack(s);
+		   }
+		}
+	}
 }
 
 function generateBotShips()
@@ -408,7 +618,7 @@ function generateCoords(letterC, numberC, i, x, direction)
 						for( s = 2; s <= 5; s++)					
 						{
 							alert("inside if");
-						if(numberC[i]-s-l>= 0)
+						if((numberC[i]-s-l) >= 0)
 						{ 
 							alert("inside if");
 							for(var j = 1; j <= s; j++)
