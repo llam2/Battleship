@@ -358,22 +358,15 @@ function validate() {
 	var direct = [0,0,0,0,0,0,0];
 	for(var n = 0; n < 7; n++)
 	{
-		alert("in for loop");
 		if(directionV[n] == true)
 		{
-			alert("in if");
 			direct[n] = 1;
-			alert("after if");
-			
 		}
 		else 
 		{
-			alert("in else");
 			direct[n] = 2;
-			alert("in else after");
 		}
 	}
-	alert("finished setting directions");
 	
 	//IN DEVELOPMENT... FOR COLLISION VALIDATION
 	for(var i = 0; i < 7; i++)
@@ -408,6 +401,47 @@ function validate() {
 	var msg = "";
 		
 		//collision validation
+		var size = 0;
+		for(var i = 0; i < 7; i++)
+		{
+		if(i == 0)
+			size = 5;
+		else if (i == 1 || i == 2)
+			size = 4;
+		else if (i == 3 || i == 4)
+			size = 3;
+		else if (i == 5 || i == 6)
+			size = 2;
+			
+				if(direct[i] == 1)
+				{
+					if((letter[i]+size-1) <= 9)
+					{
+						for(var j = 0; j < size; j++)
+						if(x[letter[i]+j][number[i]] == 0)
+							x[letter[i]+j][number[i]] = 1;
+						else
+						validation = false;
+					}
+					else
+						validation = false;
+				}
+				else if(direct[i] == 2)
+				{
+					if((number[i]-size+1) >= 0)
+					{
+						for(var j = 0; j < size; j++)
+						if(x[letter[i]][number[i]-j] == 0)
+							x[letter[i]][number[i]-j] = 1;
+						else
+							validation = false;
+					}
+					else
+						validation = false;
+				}
+			
+			
+		}
 		
 		
 		
@@ -429,14 +463,15 @@ function validate() {
 			pletterC = letter;
 			pnumberC = number;
 			pdirection = direct;
+			//enable submit button
 		}
 		else
 		{
 			//Failed vlidation code here
+			alert("Validation failed..... Please Enter valid coordinates and ensure your ships do not collide!!!!");
+			//Keep submit button disabled
 		}
-		pletterC = letter;
-		pnumberC = number;
-		pdirection = direct;
+		
 		
 		
 		
