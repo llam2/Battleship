@@ -119,7 +119,7 @@ function createPlayerGrid()
 
 function getBotGrid()
 {
-	return botGrid();
+	return botGrid;
 }
 
 
@@ -182,6 +182,7 @@ function putShipsOnPage()
 	
 	addPlayerShipsToBattlefield();
 	createPlayerGrid();
+	generateBotShips();
 
 	
 }
@@ -229,6 +230,13 @@ function updateScoreWhenWin()
 
 function botTurn()
 {
+	
+	//add code for front end visual changes
+	
+	//transparent background blacking grid function here
+	
+	//add 3 second delay function here
+	
 	var lCoord = Math.floor((Math.random() * 9) + 0);
 	var nCoord = Math.floor((Math.random() * 9) + 0);
 	
@@ -269,42 +277,102 @@ function botTurn()
 	
 }
 
-function playerTurn(lCoord, nCoord)
+function playerTurn(value)
 {
 	
-	var bot = getBotGrid();
+	var letter = value.substring(0, 1);
+	var nCoord = value.substring(1, 2);
+	var lCoord;
+	if(letter == 'A')
+		lCoord = 0;
+	else if(letter == 'B')
+		lCoord = 1;
+	else if(letter == 'C')
+		lCoord = 2;
+	else if(letter == 'D')
+		lCoord = 3;
+	else if(letter == 'E')
+		lCoord = 4;
+	else if(letter == 'F')
+		lCoord = 5;
+	else if(letter == 'G')
+		lCoord = 6;
+	else if(letter == 'H')
+		lCoord = 7;
+	else if(letter == 'I')
+		lCoord = 8;
+	else if(letter == 'J')
+		lCoord = 9;
+		
 	
+	//add code for front end visual changes
+	//yourTurn();
+	
+	
+	//var bot = getBotGrid();
+	
+	var bot = [
+  [1,0,0,0,0,0,0,1,0,0],
+  [1,0,0,0,0,0,1,1,1,0],
+  [1,0,0,0,0,0,0,0,0,0],
+  [1,0,0,0,0,0,1,1,1,0],
+  [1,0,1,1,1,1,0,0,0,0],
+  [0,0,0,0,0,0,0,0,0,0],
+  [0,0,0,0,0,1,0,0,0,0],
+  [0,0,0,0,0,1,0,0,0,0],
+  [0,0,0,0,0,1,0,0,0,0],
+  [0,0,0,0,0,1,0,0,0,0]
+];
+
+
 	//0 = nothing just water, 1 = ship, 2 = ship already hit, -1 = water already missed
 	
-	if(bot[lCoord][nCoord] == 0)
+	if(botGrid[lCoord][nCoord] == 0)
 	{
+	//	updatePageWhenPlayerMiss();
 		alert("It was a miss!");
-		
 		//code to get box to show water gif
 	}
-	else if(bot[lCoord][nCoord] == -1)
+	else if(botGrid[lCoord][nCoord] == -1)
 	{
+		//	updatePageWhenPlayerMiss();
 			alert("It was a miss! You already tried this box -.-");
 		
 		//code to get box to show water gif
 		botGrid[lCoord][nCoord] = -1;
 	}
-	else if(bot[lCoord][nCoord] == 1)
+	else if(botGrid[lCoord][nCoord] == 1)
 	{
+	//	updatePageWhenPlayerHit();
 		alert("It was a hit!");
 		
 		//code to constantly display smoking gif
 		
 		botGrid[lCoord][nCoord] = 2;
 	}
-		else if(bot[lCoord][nCoord] == 2)
+		else if(botGrid[lCoord][nCoord] == 2)
 	{
 		alert("You already damaged this part of the ship.... :L");
 	}
 	
+	var msg = "";
+		
+		for(var i = 0; i < 10; i++)
+		{
+			for(var j = 0; j < 10; j++)
+			{
+				msg+= botGrid[i][j] + " ";
+			}
+			msg+="\n";
+		}
+		
+		alert(msg);
+	
 	checkStatusOfGame();
 	//FUNCTION BELOW NEEDS TO BE IMPLEMENTED
 	changeTurn(false);
+	
+	botTurn();
 	
 }
 
@@ -666,6 +734,7 @@ function addPlayerShipsToBattlefield()
 
 function generateBotShips()
 {
+	/*
 	var x = createGridArray();
 	 letterC = [0,0,0,0,0,0,0];
      numberC = [0,0,0,0,0,0,0];
@@ -677,7 +746,22 @@ function generateBotShips()
 				alert("iteration" + (i+1));
 				generateCoords(letterC, numberC, i, x, direction);
 			}
-			
+	
+	botGrid = x;
+	*/	
+	
+		botGrid = [
+  [1,0,0,0,0,0,0,1,0,0],
+  [1,0,0,0,0,0,1,1,1,0],
+  [1,0,0,0,0,0,0,0,0,0],
+  [1,0,0,0,0,0,1,1,1,0],
+  [1,0,1,1,1,1,0,0,0,0],
+  [0,0,0,0,0,0,0,0,0,0],
+  [0,0,0,0,0,1,0,0,0,0],
+  [0,0,0,0,0,1,0,0,0,0],
+  [0,0,0,0,0,1,0,0,0,0],
+  [0,0,0,0,0,1,0,0,0,0]
+];
 }
 
 function generateCoords(letterC, numberC, i, x, direction)
@@ -723,14 +807,14 @@ function generateCoords(letterC, numberC, i, x, direction)
 					}
 				}
 				
-				else //if(direction[i] == 2)
+				else if(direction[i] == 2)
 				{
 					alert("loopingsdas for direction 2");
 					
-						for( s = 2; s <= 5; s++)					
+						for(var s = 2; s <= 5; s++)					
 						{
 							alert("inside if");
-						if((numberC[i]-s-l) >= 0)
+						if((numberC[i]-s-1) >= 0)
 						{ 
 							alert("inside if");
 							for(var j = 1; j <= s; j++)
@@ -781,15 +865,16 @@ function generateCoords(letterC, numberC, i, x, direction)
 				
 				else //if(direction[i] == 2)
 				{
+					alert("before foorlooop");
 					for(var s = 2; s <= 5; s++)
 					{
-						if((numberC[i]-s-l)>= 0)
+						if((numberC[i]-s-1)>= 0)
 						{
 							alert("looping for direction 2");
 							for(var j = 1; j < s; j++)
 							{
-								if(x[letterC[i]][(numberC[i]-j)] == 0)
-								x[letterC[i]][(numberC[i]-j)] = 1;
+								if(x[letterC[i]][numberC[i]-j] == 0)
+								x[letterC[i]][numberC[i]-j] = 1;
 								else
 								{
 										alert("meh");
@@ -809,6 +894,8 @@ function generateCoords(letterC, numberC, i, x, direction)
 		     }
 		     else
 		    	generateCoords(letterC, numberC, i, x, direction);
+		    	
+		   
 				
 			}
 			
