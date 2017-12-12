@@ -45,18 +45,23 @@ function transparentBG() {
 	setTimeout(function() { bg.style.display="none"; }, 5000);
 }
 
-function explosion() {
-	
+function explode(ID) {
+	alert("explosion is running");
+	var explode = document.getElementById("explode");
+	explode.style.display = "block";
+	document.getElementsById(ID).setAttribute("id", "explode");
 }
 
-function splash() {
-	alert("works");
+function splash(ID) {
+	alert("splash is running");
 	var splash = document.getElementById("splash");
 	splash.style.display = "block";
 }
 
-function smoke() {
-	
+function smoke(ID) {
+	alert("smoke is running");
+	var smoke = document.getElementById("smoke");
+	smoke.style.display = "block";
 }
 
 function playclip() {
