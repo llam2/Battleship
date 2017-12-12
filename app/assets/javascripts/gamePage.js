@@ -373,11 +373,13 @@ function playerTurn(value)
 	//	updatePageWhenPlayerMiss();
 		alert("It was a miss!");
 		//code to get box to show water gif
+		splash("botBox" + lCoord + nCoord);
 	}
 	else if(botGrid[lCoord][nCoord] == -1)
 	{
 		//	updatePageWhenPlayerMiss();
 			alert("It was a miss! You already tried this box -.-");
+		
 		
 		//code to get box to show water gif
 		//botGrid[lCoord][nCoord] = -1;
@@ -390,6 +392,8 @@ function playerTurn(value)
 		//code to constantly display smoking gif
 		
 		botGrid[lCoord][nCoord] = 2;
+		explode("botBox" + lCoord + nCoord);
+		smoke("botBox" + lCoord + nCoord);
 	}
 		else if(botGrid[lCoord][nCoord] == 2)
 	{
