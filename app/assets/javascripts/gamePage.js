@@ -39,6 +39,25 @@ window.onload = function() {
 	audio3.volume = .8;
 };
 
+function transparentBG() {
+	var bg = document.getElementById("transparentBG");
+	bg.style.display = "block";
+	setTimeout(function() { bg.style.display="none"; }, 5000);
+}
+
+function explosion() {
+	
+}
+
+function splash() {
+	alert("works");
+	var splash = document.getElementById("splash");
+	splash.style.display = "block";
+}
+
+function smoke() {
+	
+}
 
 function playclip() {
 

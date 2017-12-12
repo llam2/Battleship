@@ -48,9 +48,9 @@
 
       <tr>
         <td class="ycoord">A</td>
-        <td class="grid"><button type="button" id="splash" class="coord">&nbsp</button></td>
-        <td class="grid"><button type="button" id="smoke" class="coord">&nbsp</button></td>
-        <td class="grid"><button type="button" id="explode" class="coord">&nbsp</button></td>
+        <td class="grid"><button onmouseover="playclip();" onclick="transparentBG();" type="button" value="A0" class="coord">&nbsp</button></td>
+        <td class="grid"><button onmouseover="playclip();" type="button" value="A1" class="coord">&nbsp</button></td>
+        <td class="grid"><button onmouseover="playclip();" type="button" value="A2" class="coord">&nbsp</button></td>
         <td class="grid"><button onmouseover="playclip();" onclick="flyPlane();" type="button" value="A3" class="coord">&nbsp</button></td>
         <td class="grid"><button onmouseover="playclip();" onclick="aiTurn();" type="button" value="A4" class="coord">&nbsp</button></td>
         <td class="grid"><button onmouseover="playclip();" onclick="yourTurn();" type="button" value="A5" class="coord">&nbsp</button></td>
@@ -356,6 +356,10 @@
       </tr>
 
   </table>
+  </div>
+  
+  <div id="transparentBG">
+    
   </div>
   
   <div id="divGrid2">
