@@ -251,8 +251,13 @@ function botTurn()
 {
 	
 	//add code for front end visual changes
-	
+	setTimeout(function() { aiTurn(); }, 3000);
+
 	//transparent background blacking grid function here
+	transparentBG();
+	
+	
+	setTimeout(function() { flyPlane(); }, 1000);
 	
 	//add 3 second delay function here
 	
@@ -293,11 +298,23 @@ function botTurn()
 	//FUNCTION BELOW NEEDS TO BE IMPLEMENTED
 	changeTurn(true);
 	
+	setTimeout(function() { yourTurn(); }, 5000);
+	
+	
 	
 }
 
+function dropBomb(boxId)
+{
+	
+}
+
+
+
 function playerTurn(value)
 {
+	//add animations for clicking box here
+	flyPlane();
 	
 	var letter = value.substring(0, 1);
 	var nCoord = value.substring(1, 2);
@@ -358,7 +375,7 @@ function playerTurn(value)
 			alert("It was a miss! You already tried this box -.-");
 		
 		//code to get box to show water gif
-		botGrid[lCoord][nCoord] = -1;
+		//botGrid[lCoord][nCoord] = -1;
 	}
 	else if(botGrid[lCoord][nCoord] == 1)
 	{
@@ -487,19 +504,20 @@ function validate() {
 	var letter = [0,0,0,0,0,0,0];
 	
 	var validation = true;
+	var validationMessage = "";
 	
 	for(var i = 0; i < 7; i++)
 		{
 		if(!(/^([A-Ja-j])$/.test(letterChar[i])))
 		{
-			alert("You have one or more invalid letter Coordinates! ReEnter for the " + (i+1) + "ship!");
-			alert(letterChar[i])
+			validationMessage += "You have one or more invalid letter Coordinates! ReEnter for the " + (i+1) + "ship!\n\n";
+			
 			//abort validation
 			validation = false;
 		}
 		if(!(/^([0-9])$/.test(number[i])))
 		{
-			alert("You have one or more invalid number Coordinates! ReEnter for the " + (i+1) + "ship!");
+		validationMessage += "You have one or more invalid number Coordinates! ReEnter for the " + (i+1) + "ship!\n\n";
 			//abort validation
 			validation = false;
 		}
@@ -512,11 +530,11 @@ function validate() {
 		    {
 		    	//Direction Validation Failed
 		    	validation = false;
-		    	alert("You did not choose a direction for ship " + (i+1) + "!");
+		    	validationMessage += "You did not choose a direction for ship " + (i+1) + "!\n\n";
 		    }
 	}
 	
-	alert("fot tos etting directions");
+	
 	//setting directions
 	var direct = [0,0,0,0,0,0,0];
 	for(var n = 0; n < 7; n++)
@@ -607,7 +625,7 @@ function validate() {
 		}
 		
 		
-		
+/*		
 		var msg = "";
 		
 		for(var i = 0; i < 10; i++)
@@ -620,7 +638,7 @@ function validate() {
 		}
 		
 		alert(msg);
-		
+*/		
 		if(validation == true)
 		{
 			pletterC = letter;
@@ -632,7 +650,9 @@ function validate() {
 		else
 		{
 			//Failed vlidation code here
-			alert("Validation failed..... Please Enter valid coordinates and ensure your ships do not collide!!!!");
+			validationMessage += "Validation failed..... Please Enter valid coordinates and ensure your ships do not collide!!!!\n\n";
+			
+			alert(validationMessage);
 			//Keep submit button disabled
 		}
 		
@@ -696,7 +716,7 @@ script.src = 'http://code.jquery.com/jquery-1.11.0.min.js';
 script.type = 'text/javascript';
 document.getElementsByTagName('head')[0].appendChild(script);
 
-	var score = 12343124;
+	var score = 343434;
 	jQuery.ajax({
   data: 'score=' + score,
   dataType: 'script',
