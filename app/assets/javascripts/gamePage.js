@@ -96,6 +96,7 @@ function splash(ID) {
 		//buttonsPressedSplash++;
 		//document.getElementById(ID).setAttribute("class", "clickedBox");
 	}, 2500);
+	bloop();
 	//alert(ID);
 }
 
@@ -378,6 +379,12 @@ function botTurn()
 function dropBomb(boxId)
 {
 	
+}
+
+function bloop()
+{
+	var audio = document.getElementsByTagName("audio")[6];
+	audio.play();
 }
 
 
