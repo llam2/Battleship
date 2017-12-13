@@ -46,6 +46,7 @@ window.onload = function() {
 function loadingWheel() {
 	var load = document.getElementById("loadingWheel");
 	load.style.display = "block";
+	
 }
 
 function transparentBG() {
