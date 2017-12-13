@@ -56,7 +56,7 @@ function hit() {
 	hit.style.display="block";
 	setTimeout(function() { 
 		hit.style.display ="none";
-	}, 3000);
+	}, 1500);
 }
 
 function miss() {
@@ -64,7 +64,7 @@ function miss() {
 	miss.style.display="block";
 	setTimeout(function() { 
 		miss.style.display ="none";
-	}, 3000);
+	}, 1500);
 }
 
 function transparentBG() {
@@ -328,7 +328,7 @@ function botTurn()
 		
 		
 		//code to get box to show water gif
-		setTimeout(function(){splash("box" + lCoord + nCoord);}, 4000);
+		setTimeout(function(){miss();splash("box" + lCoord + nCoord);}, 4000);
 		playerGrid[lCoord][nCoord] = -1;
 	
 	}
@@ -338,19 +338,20 @@ function botTurn()
 		
 		//code to get box to show water gif
 		playerGrid[lCoord][nCoord] = -1;
+		miss();
 	}
 	else if(player[lCoord][nCoord] == 1)
 	{
 		
 		
 		//code to constantly display smoking gif
-		setTimeout(function(){smoke("box" + lCoord + nCoord);}, 4000);
+		setTimeout(function(){hit();smoke("box" + lCoord + nCoord);}, 4000);
 		
 		playerGrid[lCoord][nCoord] = 2;
 	}
 		else if(player[lCoord][nCoord] == 2)
 	{
-	
+	    hit();
 	}
 	
 	checkStatusOfGame();
@@ -439,7 +440,7 @@ function playerTurn(value)
 	//	updatePageWhenPlayerMiss();
 	//	alert("It was a miss!");
 		//code to get box to show water gif
-		setTimeout(function() {splash("botBox" + lCoord + nCoord);}, 1800);
+		setTimeout(function() {miss();splash("botBox" + lCoord + nCoord);}, 1800);
 		updateScoreWhenMiss();
 	}
 	else if(botGrid[lCoord][nCoord] == -1)
@@ -447,6 +448,7 @@ function playerTurn(value)
 		//	updatePageWhenPlayerMiss();
 			alert("It was a miss! You already tried this box -.-");
 			updateScoreWhenMiss();
+			miss();
 		
 		
 		//code to get box to show water gif
@@ -461,13 +463,14 @@ function playerTurn(value)
 		
 		botGrid[lCoord][nCoord] = 2;
 		updateScoreWhenHit();
-		setTimeout(function() {smoke("botBox" + lCoord + nCoord);}, 1800);
+		setTimeout(function() {hit();smoke("botBox" + lCoord + nCoord);}, 1800);
 		
 		
 	}
 		else if(botGrid[lCoord][nCoord] == 2)
 	{
-		//alert("You already damaged this part of the ship.... :L");
+		alert("You already damaged this part of the ship.... :L");
+		hit();
 	}
 	
 	var msg = "";
