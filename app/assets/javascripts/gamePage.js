@@ -179,7 +179,7 @@ function createPlayerGrid()
 			msg+="\n";
 		}
 		
-		alert(msg);
+	//	alert(msg);
 }
 
 
@@ -798,13 +798,15 @@ function createGridArray()
 function sendScoresToRails()
 {
 	//----------------------
+	
 	var script = document.createElement('script');
 script.src = 'http://code.jquery.com/jquery-1.11.0.min.js';
 script.type = 'text/javascript';
 document.getElementsByTagName('head')[0].appendChild(script);
 
 	var score = 343434;
-	jQuery.ajax({
+	
+	script.ajax({
   data: 'score=' + score,
   dataType: 'script',
   type: 'post',
@@ -812,15 +814,12 @@ document.getElementsByTagName('head')[0].appendChild(script);
     });
 
 	alert("suhh");
+	
+	
    
-if (score){
     //Passing mdate and phone variables to rails controller(book_date & phone)
-    window.open("localhost:3000//controller/create?scores="+score,"_self")
-}
-else
-{
-    alert("Cancelled");
-}
+   // window.open("localhost:3000//controller/create?scores="+score,"_self");
+
 //-----------------------
 }
 
