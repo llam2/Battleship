@@ -30,6 +30,10 @@
   [0,0,0,0,0,0,0,0,0,0]
 ];
 
+var buttonsPressedSplash = 0;
+var buttonsPressedSmoke = 0;
+var buttonsPressedExplode = 0;
+
 window.onload = function() {
 	var audio = document.getElementsByTagName("audio")[1];
 	var audio2 = document.getElementsByTagName("audio")[2];
@@ -39,24 +43,45 @@ window.onload = function() {
 	audio3.volume = .8;
 };
 
+function loadingWheel() {
+	var load = document.getElementById("loadingWheel");
+	load.style.display = "block";
+}
+
 function transparentBG() {
 	var bg = document.getElementById("transparentBG");
 	bg.style.display = "block";
 	setTimeout(function() { bg.style.display="none"; }, 5000);
 }
 
-function explode() {
-	
+function explode(ID) {
+	alert("explosion is running");
+	document.getElementById(ID).setAttribute("class", "explode");
+		setTimeout(function() { 
+		var explode = document.getElementsByClassName("explode");
+		explode[buttonsPressedExplode].style.display = "none";
+		buttonsPressedExplode++;
+		document.getElementById(ID).setAttribute("class", "clickedBox");
+		document.getElementById(ID).setAttribute("class", "smoke");
+		alert("works");
+	}, 2500);
 }
 
-function splash() {
-	alert("works");
-	var splash = document.getElementById("splash");
-	splash.style.display = "block";
+function splash(ID) {
+	alert("splash is running");
+	document.getElementById(ID).setAttribute("class", "splash");
+	setTimeout(function() { 
+		var splash = document.getElementsByClassName("splash");
+		splash[buttonsPressedSplash].style.display = "none";
+		buttonsPressedSplash++;
+		document.getElementById(ID).setAttribute("class", "clickedBox");
+	}, 2500);
+	alert(ID);
 }
 
-function smoke() {
-	
+function smoke(ID) {
+	alert("smoke is running");
+	document.getElementById(ID).setAttribute("class", "smoke");
 }
 
 function playclip() {
@@ -395,7 +420,7 @@ function playerTurn(value)
 		
 		botGrid[lCoord][nCoord] = 2;
 		explode("botBox" + lCoord + nCoord);
-		smoke("botBox" + lCoord + nCoord);
+		
 	}
 		else if(botGrid[lCoord][nCoord] == 2)
 	{
