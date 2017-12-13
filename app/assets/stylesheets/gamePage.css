@@ -4,6 +4,25 @@
 
 html, body {margin: 0; height: 100%; overflow: hidden}
 
+h3{
+	font-size: 24px;
+	text-align: center;
+	position: absolute;
+	top: 20%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+#miss{
+	color: red;
+	display: none;
+}
+
+#hit{
+	color: yellow;
+	display: none;
+}
+
 table 
 {
 	border-collapse: collapse;
@@ -132,7 +151,7 @@ body
 
 .splash{
 	background-image: url(/assets/splash2.gif);
-	background-color: #b3e6ff;
+	background-color: #5B86E5;
 	background-size: 42px 42px;
 	width: 42px;
 	height: 42px;
@@ -142,7 +161,7 @@ body
 
 .smoke {
 	background-image: url(/assets/smoke2.gif);
-	background-color: #b3e6ff;
+	background-color: brown;
 	background-size: 42px 42px;
 	width: 42px;
 	height: 42px;

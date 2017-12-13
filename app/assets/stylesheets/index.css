@@ -247,16 +247,19 @@ input[type=checkbox]:checked + label:before {
  	text-align: center;
  	text-decoration: none;
  	outline: none;
+ 	border-style: solid;
+  border-color: white;
+  border-width: .5px;
  	/*background-color: #FFC000;
  	border-style: solid;
     border-color: black;
     border-width: .5px;
  	border-radius: 5px;
  	box-shadow: 0 5px #C55A11;*/
- 	width: 150px;
+ 	width: 125px;
  	position: absolute;
  	top: 93%;
- 	left: 88%;
+ 	left: 86%;
 
 }
 

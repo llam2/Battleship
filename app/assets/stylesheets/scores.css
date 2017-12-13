@@ -1,0 +1,65 @@
+*{
+	font-family: Monospace;
+}
+
+html, body {margin: 0; height: 100%; overflow: hidden}
+
+
+body{
+    background-image: url("island.jpg");
+}
+
+.title
+{
+	display: inline-block;
+	width:425px; 
+	height:100px;
+	position: absolute;
+  	top: 33%;
+    left: 50%;
+    transform: translate(-50%, -210%);
+	backface-visibility: hidden;
+
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+tr {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+th {
+    font-size: 24px;
+    display: inline-block;
+    padding-left: 150px;
+    padding-right: 150px;
+    text-align: center;
+}
+
+td {
+    font-size: 16px;
+    text-align: center;
+}
+
+main {
+    background-color: #b3e6ff;
+	background: rgba(179, 230, 255, 0.7);
+	background-position: center;
+	width: 800px;
+	height: 490px;
+	padding-top: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 12%;
+}
+
+h1 {
+    font-weight: bold;
+	font-size: 48px;
+	text-align: center;
+	user-select: none;
+}

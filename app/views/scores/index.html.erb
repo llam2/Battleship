@@ -1,14 +1,28 @@
-<h1>Top 10 Scores</h1>
-<table>
-  <tr>
-    <th>Player Name</th>
-    <th>Score</th>
-  </tr>
+<head>
+    <%= stylesheet_link_tag "scores.css" %>
+    <%= javascript_include_tag "scores.js" %>
+</head>
+
+<body>
+    <header>
+      <img src="/assets/Title.png" alt="Title" class="title">
+      <!--475 100-->
+    </header>
+    
+    <main>
+    <h1>Top 10 Scores</h1>
+    <table>
+      <tr>
+        <th align="center">Name</th>
+        <th align="center">Score</th>
+      </tr>
  
-  <% @scores.each do |score| %>
-    <tr>
-      <td><%= score.playerId %></td>
-      <td><%= score.score %></td>
-    </tr>
-  <% end %>
-</table>
+      <% @scores.each do |score| %>
+        <tr>
+          <td><%= score.playerId %></td>
+          <td><%= score.score %></td>
+        </tr>
+      <% end %>
+    </table>
+    </main>
+</body>

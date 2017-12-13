@@ -51,6 +51,22 @@ function loadingWheel() {
 	}, 5000);
 }
 
+function hit() {
+	var hit = document.getElementById("hit");
+	hit.style.display="block";
+	setTimeout(function() { 
+		hit.style.display ="none";
+	}, 3000);
+}
+
+function miss() {
+	var miss = document.getElementById("miss");
+	miss.style.display="block";
+	setTimeout(function() { 
+		miss.style.display ="none";
+	}, 3000);
+}
+
 function transparentBG() {
 	var bg = document.getElementById("transparentBG");
 	bg.style.display = "block";
