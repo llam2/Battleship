@@ -4,7 +4,7 @@
 	var pnumberC = [0,0,0,0,0,0,0];
 	var direction = [0,0,0,0,0,0,0];
 	var pdirection = [0,0,0,0,0,0,0];
-	var score = 0;
+	var score = 10011;
 	var playerGrid = [
   [0,0,0,0,0,0,0,0,0,0],
   [0,0,0,0,0,0,0,0,0,0],
@@ -69,7 +69,6 @@ function explode(ID) {
 }
 
 function splash(ID) {
-	alert("splash is running");
 	document.getElementById(ID).setAttribute("class", "splash");
 	setTimeout(function() { 
 		var splash = document.getElementsByClassName("splash");
@@ -266,7 +265,7 @@ function updateScoreWhenHit(valueID)
 
 function updateScoreWhenMiss()
 {
-	score -= 1000;
+	score -= 300;
 }
 function updateScoreWhenWin()
 {
@@ -282,13 +281,17 @@ function botTurn()
 {
 	
 	//add code for front end visual changes
-	setTimeout(function() { aiTurn(); }, 3000);
+	aiTurn();
+	loadingWheel();
+	setTimeout(function(){flyPlane();}, 5000);
+	setTimeout(function(){yourTurn();}, 2000);
+
 
 	//transparent background blacking grid function here
-	transparentBG();
+//	transparentBG();
 	
 	
-	setTimeout(function() { flyPlane(); }, 1000);
+
 	
 	//add 3 second delay function here
 	
@@ -299,12 +302,14 @@ function botTurn()
 	
 	//0 = nothing just water, 1 = ship, 2 = ship already hit, -1 = water already missed
 	
-	if(player[lCoord][nCoord] == 0)
+	if(player[lCoord][nCoord] == 0 || player[lCoord][nCoord] == -1)
 	{
 		
 		
 		//code to get box to show water gif
-		splash("botBox" + lCoord + nCoord);
+		setTimeout(function(){splash("box" + lCoord + nCoord);}, 2000);
+		playerGrid[lCoord][nCoord] = -1;
+	
 	}
 	else if(player[lCoord][nCoord] == -1)
 	{
@@ -318,7 +323,7 @@ function botTurn()
 		
 		
 		//code to constantly display smoking gif
-		smoke("botBox" + lCoord + nCoord);
+		setTimeout(function(){smoke("box" + lCoord + nCoord);}, 2000);
 		
 		playerGrid[lCoord][nCoord] = 2;
 	}
@@ -329,11 +334,22 @@ function botTurn()
 	
 	checkStatusOfGame();
 	//FUNCTION BELOW NEEDS TO BE IMPLEMENTED
-	changeTurn(true);
+	//changeTurn(true);
 	
-	setTimeout(function() { yourTurn(); }, 5000);
+//setTimeout(function() { yourTurn(); }, 5000);
 	
-	
+	var msg = "";
+		
+		for(var i = 0; i < 10; i++)
+		{
+			for(var j = 0; j < 10; j++)
+			{
+				msg+= playerGrid[i][j] + " ";
+			}
+			msg+="\n";
+		}
+		
+		alert(msg);
 	
 }
 
@@ -347,7 +363,8 @@ function dropBomb(boxId)
 function playerTurn(value)
 {
 	//add animations for clicking box here
-	flyPlane();
+	
+	flyPlane2();
 	
 	var letter = value.substring(0, 1);
 	var nCoord = value.substring(1, 2);
@@ -401,12 +418,14 @@ function playerTurn(value)
 	//	updatePageWhenPlayerMiss();
 		alert("It was a miss!");
 		//code to get box to show water gif
-		splash("botBox" + lCoord + nCoord);
+		setTimeout(function() {splash("botBox" + lCoord + nCoord);}, 2000);
+		updateScoreWhenMiss();
 	}
 	else if(botGrid[lCoord][nCoord] == -1)
 	{
 		//	updatePageWhenPlayerMiss();
 			alert("It was a miss! You already tried this box -.-");
+			updateScoreWhenMiss();
 		
 		
 		//code to get box to show water gif
@@ -420,7 +439,9 @@ function playerTurn(value)
 		//code to constantly display smoking gif
 		
 		botGrid[lCoord][nCoord] = 2;
-		explode("botBox" + lCoord + nCoord);
+		updateScoreWhenHit();
+		setTimeout(function() {explode("botBox" + lCoord + nCoord);}, 2000);
+		
 		
 	}
 		else if(botGrid[lCoord][nCoord] == 2)
@@ -445,18 +466,16 @@ function playerTurn(value)
 	//FUNCTION BELOW NEEDS TO BE IMPLEMENTED
 	changeTurn(false);
 	
-	botTurn();
+	
+	
+   setTimeout(function() {botTurn();}, 3000);
+	
 	
 }
 
  function changeTurn(isTurn)
  {
- 	if(!isTurn)
- 		botTurn();
- 	else
- 		{
- 			//enable user to select a box.
- 		}
+ 
  }
 
 function endGame()
@@ -827,14 +846,14 @@ function generateBotShips()
 	*/	
 	
 		botGrid = [
-  [1,0,0,0,0,0,0,1,0,0],
-  [1,0,0,0,0,0,1,1,1,0],
+  [0,0,0,0,0,0,0,0,0,0],
+  [0,0,0,0,0,0,1,1,1,0],
   [1,0,0,0,0,0,0,0,0,0],
   [1,0,0,0,0,0,1,1,1,0],
   [1,0,1,1,1,1,0,0,0,0],
-  [0,0,0,0,0,0,0,0,0,0],
-  [0,0,0,0,0,1,0,0,0,0],
-  [0,0,0,0,0,1,0,0,0,0],
+  [1,0,0,0,0,0,0,0,0,0],
+  [1,0,0,0,0,1,0,1,1,0],
+  [0,0,0,0,0,1,0,1,1,0],
   [0,0,0,0,0,1,0,0,0,0],
   [0,0,0,0,0,1,0,0,0,0]
 ];
