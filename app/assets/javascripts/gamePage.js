@@ -66,24 +66,27 @@ function explode(ID) {
 		buttonsPressedExplode++;
 		document.getElementById(ID).setAttribute("class", "clickedBox");
 		document.getElementById(ID).setAttribute("class", "smoke");
-		alert("works");
 	}, 2500);
+	
+	var audio = document.getElementsByTagName("audio")[5];
+	audio.play();
 }
 
 function splash(ID) {
 	document.getElementById(ID).setAttribute("class", "splash");
 	setTimeout(function() { 
 		var splash = document.getElementsByClassName("splash");
-		splash[buttonsPressedSplash].style.display = "none";
-		buttonsPressedSplash++;
-		document.getElementById(ID).setAttribute("class", "clickedBox");
+		//splash[buttonsPressedSplash].style.display = "none";
+		//buttonsPressedSplash++;
+		//document.getElementById(ID).setAttribute("class", "clickedBox");
 	}, 2500);
-	alert(ID);
+	//alert(ID);
 }
 
 function smoke(ID) {
-	alert("smoke is running");
 	document.getElementById(ID).setAttribute("class", "smoke");
+	var audio = document.getElementsByTagName("audio")[5];
+	audio.play();
 }
 
 function playclip() {
@@ -174,7 +177,7 @@ function flyPlane() {
 	var plane = document.getElementById("jet");
 	plane.style.display = "block";
 	plane.style.animationName = "fly";
-	var audio = document.getElementsByTagName("audio")[3]
+	var audio = document.getElementsByTagName("audio")[3];
 	setTimeout(function() { audio.play(); }, 500);
 	setTimeout(function() { byePlane(); }, 2000);
 }
@@ -285,12 +288,12 @@ function botTurn()
 	//add code for front end visual changes
 	aiTurn();
 	loadingWheel();
-	setTimeout(function(){flyPlane();}, 5000);
-	setTimeout(function(){yourTurn();}, 2000);
-
+	setTimeout(function(){flyPlane();}, 2000);
+	setTimeout(function(){yourTurn();}, 5000);
+    transparentBG();
 
 	//transparent background blacking grid function here
-//	transparentBG();
+
 	
 	
 
@@ -304,12 +307,12 @@ function botTurn()
 	
 	//0 = nothing just water, 1 = ship, 2 = ship already hit, -1 = water already missed
 	
-	if(player[lCoord][nCoord] == 0 || player[lCoord][nCoord] == -1)
+	if(player[lCoord][nCoord] == 0)
 	{
 		
 		
 		//code to get box to show water gif
-		setTimeout(function(){splash("box" + lCoord + nCoord);}, 2000);
+		setTimeout(function(){splash("box" + lCoord + nCoord);}, 4000);
 		playerGrid[lCoord][nCoord] = -1;
 	
 	}
@@ -325,7 +328,7 @@ function botTurn()
 		
 		
 		//code to constantly display smoking gif
-		setTimeout(function(){smoke("box" + lCoord + nCoord);}, 2000);
+		setTimeout(function(){smoke("box" + lCoord + nCoord);}, 4000);
 		
 		playerGrid[lCoord][nCoord] = 2;
 	}
@@ -351,7 +354,7 @@ function botTurn()
 			msg+="\n";
 		}
 		
-		alert(msg);
+		//alert(msg);
 	
 }
 
@@ -418,9 +421,9 @@ function playerTurn(value)
 	if(botGrid[lCoord][nCoord] == 0)
 	{
 	//	updatePageWhenPlayerMiss();
-		alert("It was a miss!");
+	//	alert("It was a miss!");
 		//code to get box to show water gif
-		setTimeout(function() {splash("botBox" + lCoord + nCoord);}, 2000);
+		setTimeout(function() {splash("botBox" + lCoord + nCoord);}, 1800);
 		updateScoreWhenMiss();
 	}
 	else if(botGrid[lCoord][nCoord] == -1)
@@ -436,19 +439,19 @@ function playerTurn(value)
 	else if(botGrid[lCoord][nCoord] == 1)
 	{
 	//	updatePageWhenPlayerHit();
-		alert("It was a hit!");
+		//alert("It was a hit!");
 		
 		//code to constantly display smoking gif
 		
 		botGrid[lCoord][nCoord] = 2;
 		updateScoreWhenHit();
-		setTimeout(function() {explode("botBox" + lCoord + nCoord);}, 2000);
+		setTimeout(function() {smoke("botBox" + lCoord + nCoord);}, 1800);
 		
 		
 	}
 		else if(botGrid[lCoord][nCoord] == 2)
 	{
-		alert("You already damaged this part of the ship.... :L");
+		//alert("You already damaged this part of the ship.... :L");
 	}
 	
 	var msg = "";
@@ -462,7 +465,7 @@ function playerTurn(value)
 			msg+="\n";
 		}
 		
-		alert(msg);
+		//alert(msg);
 	
 	checkStatusOfGame();
 	//FUNCTION BELOW NEEDS TO BE IMPLEMENTED
