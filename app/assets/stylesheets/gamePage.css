@@ -236,6 +236,12 @@ main {
  	margin-left: 12%;
 }
 
+#shipValidate:active {
+background-color: #e6ac00;
+  box-shadow: 0 3px #C55A11;
+  transform: translateY(4px);
+}
+
 #shipSubmit:hover {
 background-color: #e6ac00;
 cursor: pointer;
