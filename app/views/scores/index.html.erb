@@ -17,9 +17,24 @@
         <th>Score</th>
       </tr>
  
+      <% nameArr = Array.new%>
+      <% scoreArr = Array.new%>
+      <% i = 0%>
+      <% max = 0%>
+      
+     <% @scores.each do |score| %>
+     <% nameArr[i] = Player.find(score.playerId) %>
+     <% scoreArr[i] = score.score %>
+     <% i+1 %>
+     <% end %>
+     
+     
+     <% scoreArr.sort %>
+      
       <% @scores.each do |score| %>
+      <% player = Player.find(score.playerId)%>
         <tr>
-          <td><%= score.playerId %></td>
+          <td><%= player.userName %></td>
           <td><%= score.score %></td>
         </tr>
       <% end %>
