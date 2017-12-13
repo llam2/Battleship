@@ -247,6 +247,11 @@ function updateScoreWhenWin()
 	score+=10000
 }
 
+function startEvents()
+{
+	
+}
+
 function botTurn()
 {
 	
@@ -273,6 +278,7 @@ function botTurn()
 		
 		
 		//code to get box to show water gif
+		splash("botBox" + lCoord + nCoord);
 	}
 	else if(player[lCoord][nCoord] == -1)
 	{
@@ -286,6 +292,7 @@ function botTurn()
 		
 		
 		//code to constantly display smoking gif
+		smoke("botBox" + lCoord + nCoord);
 		
 		playerGrid[lCoord][nCoord] = 2;
 	}
