@@ -83,7 +83,7 @@ audio
 	background-color: #b3e6ff;
 	background: rgba(179, 230, 255, 0.7);
 	width: 600px;
-	height: 510px;
+	height: 600px;
 	margin-top: 2%;
 	padding-top: 10px;
 	margin-left: auto;
@@ -261,6 +261,35 @@ input[type=checkbox]:checked + label:before {
  	top: 93%;
  	left: 86%;
 
+}
+
+#close {
+	padding: 10px 20px;
+ 	font-size: 15px;
+ 	font-weight: bold;
+ 	cursor: pointer;
+ 	text-align: center;
+ 	text-decoration: none;
+ 	outline: none;
+ 	background-color: #FFC000;
+ 	border-style: solid;
+    border-color: black;
+    border-width: .5px;
+ 	border-radius: 5px;
+ 	box-shadow: 0 5px #C55A11;
+ 	margin-top: 45%;
+ 	margin-left: 42%;
+}
+
+#close:active {
+background-color: #e6ac00;
+  box-shadow: 0 3px #C55A11;
+  transform: translateY(4px);
+}
+
+#close:hover {
+background-color: #e6ac00;
+cursor: pointer;
 }
 
 @keyframes slide{

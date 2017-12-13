@@ -54,23 +54,35 @@ function options() {
 
 	var audio = document.getElementsByTagName("audio")[2];
 	var y = document.getElementById("options");
+	var x = document.getElementById("optionsButton");
+	x.style.display = "none";
+	var w = document.getElementById("scoresButton");
+	w.style.display = "none";
 	var titleClass = document.getElementsByClassName("title")[0];
 	var start = document.getElementById("start");
+	var z = document.getElementById("close");
 	start.style.display = "none";
 	y.style.display = "block";
+	z.style.display = "block";
 	titleClass.style.display = "none";
 	audio.play();
 };
 
 function hideOptions() {
 
+	var x = document.getElementById("optionsButton");
+	var w = document.getElementById("scoresButton");
+	var z = document.getElementById("close");
 	var audio = document.getElementsByTagName("audio")[2];
 	var y = document.getElementById("options");
 	var titleClass = document.getElementsByClassName("title")[0];
 	var start = document.getElementById("start");
+	x.style.display = "block";
+	w.style.display = "block";
 	start.style.display = "block";
 	titleClass.style.display = "block";
 	y.style.display = "none";
+	z.style.display = "none";
 	audio.play();
 };
 
